@@ -1,0 +1,1 @@
+{"jsonapi":{"version":"1.0"},"data":{"type":"project","id":"ember-dynamic-form","attributes":{"name":"ember-dynamic-form","version":"2.11.0","navigationIndex":[]},"relationships":{"modules":{"data":[]}}}}
