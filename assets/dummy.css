@@ -48,6 +48,18 @@ button:not(.ember-power-calendar-day) {
   padding: 20px;
   width: 100%;
 }
+.intro h2 {
+  font-weight: bold;
+}
+.intro li{
+  list-style: disc;
+  margin-left: 40px;
+}
+
+a {
+  color: #2C5CC5;
+  cursor: pointer;
+}
 
 /* form css  */
 form {
@@ -940,11 +952,12 @@ button:focus, button:active {
  .ember-basic-dropdown .ember-power-select-trigger .ember-power-select-multiple-option {
    display: flex;
    margin: 4px;
-   padding: 2px 0 2px 4px;
+   padding: 2px 4px 2px 4px;
    color: #12344d;
+   flex-direction: row-reverse;
 }
  .ember-basic-dropdown .ember-power-select-trigger .ember-power-select-multiple-option .ember-power-select-multiple-remove-btn {
-   margin: 2px 2px 0 4px;
+   margin: 2px 4px;
    font-size: 18px;
    color: #475867;
    font-weight: 500;
@@ -953,7 +966,9 @@ button:focus, button:active {
    text-align: center;
    background: none;
    border: none;
-   padding: 0;
+   padding: 4px;
+   display: flex;
+   align-items: center;
 }
  .ember-basic-dropdown .ember-power-select-clear-btn {
    background: none;
