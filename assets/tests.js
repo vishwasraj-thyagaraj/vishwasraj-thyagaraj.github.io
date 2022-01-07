@@ -115,9 +115,104 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(false, 'components/fields/textarea-field/component.js should pass ESLint\n\n15:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n19:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
   });
 
+  QUnit.test('components/render-component/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/render-component/component.js should pass ESLint\n\n');
+  });
+
   QUnit.test('components/sample-form/component.js', function (assert) {
     assert.expect(1);
     assert.ok(false, 'components/sample-form/component.js should pass ESLint\n\n60:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n62:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n83:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n109:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n123:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n130:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n134:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n159:8 - \'hljs\' is not defined. (no-undef)\n160:7 - \'hljs\' is not defined. (no-undef)\n192:7 - \'hljs\' is not defined. (no-undef)');
+  });
+
+  QUnit.test('components/sample-form/fields/autocomplete-fields/multiple-with-create.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/autocomplete-fields/multiple-with-create.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/autocomplete-fields/multiple.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/autocomplete-fields/multiple.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/autocomplete-fields/single-with-create.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/autocomplete-fields/single-with-create.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/autocomplete-fields/single.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/autocomplete-fields/single.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/date-picker-fields/date-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/sample-form/fields/date-picker-fields/date-field.js should pass ESLint\n\n12:14 - \'moment\' is not defined. (no-undef)\n13:14 - \'moment\' is not defined. (no-undef)');
+  });
+
+  QUnit.test('components/sample-form/fields/date-picker-fields/date-range-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/sample-form/fields/date-picker-fields/date-range-field.js should pass ESLint\n\n15:14 - \'moment\' is not defined. (no-undef)\n16:14 - \'moment\' is not defined. (no-undef)\n19:13 - \'moment\' is not defined. (no-undef)\n20:11 - \'moment\' is not defined. (no-undef)');
+  });
+
+  QUnit.test('components/sample-form/fields/date-picker-fields/date-time-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/sample-form/fields/date-picker-fields/date-time-field.js should pass ESLint\n\n12:17 - \'moment\' is not defined. (no-undef)\n13:15 - \'moment\' is not defined. (no-undef)');
+  });
+
+  QUnit.test('components/sample-form/fields/dependent-fields/checkbox-dependent-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/dependent-fields/checkbox-dependent-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/dependent-fields/dropdown-dependent-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/dependent-fields/dropdown-dependent-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/dependent-fields/nested-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/dependent-fields/nested-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/dependent-fields/radio-dependent-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/dependent-fields/radio-dependent-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/normal-fields/checkbox-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/normal-fields/checkbox-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/normal-fields/checkbox-group-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/normal-fields/checkbox-group-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/normal-fields/input-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/normal-fields/input-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/normal-fields/radio-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/normal-fields/radio-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/normal-fields/textarea-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/normal-fields/textarea-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/select-fields/multiple.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/select-fields/multiple.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/select-fields/single.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/select-fields/single.js should pass ESLint\n\n');
   });
 
   QUnit.test('constants/autocomplete-fields/multiple-with-create.js', function (assert) {
@@ -36371,6 +36466,11 @@ define('dummy/tests/templates.template.lint-test', [], function () {
   QUnit.test('dummy/components/fields/textarea-field/template.hbs', function (assert) {
     assert.expect(1);
     assert.ok(false, 'dummy/components/fields/textarea-field/template.hbs should pass TemplateLint.\n\ndummy/components/fields/textarea-field/template.hbs\n  11:6  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  9:6  error  Incorrect indentation for `{{f.drawForm}}` beginning at L9:C6. Expected `{{f.drawForm}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  10:6  error  Incorrect indentation for `{{f.submit}}` beginning at L10:C6. Expected `{{f.submit}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  11:6  error  Incorrect indentation for `<button>` beginning at L11:C6. Expected `<button>` to be at an indentation of 4 but was found at 6.  block-indentation\n');
+  });
+
+  QUnit.test('dummy/components/render-component/template.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'dummy/components/render-component/template.hbs should pass TemplateLint.\n\ndummy/components/render-component/template.hbs\n  4:1  error  Incorrect indentation for `{{yield}}` beginning at L4:C1. Expected `{{yield}}` to be at an indentation of 2 but was found at 1.  block-indentation\n');
   });
 
   QUnit.test('dummy/components/sample-form/template.hbs', function (assert) {
