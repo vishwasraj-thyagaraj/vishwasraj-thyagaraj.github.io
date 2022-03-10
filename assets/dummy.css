@@ -1,3 +1,25 @@
+/* variables used to generate plain css from itildesk scss */
+/* https://jsonformatter.org/scss-to-css  */
+
+/*
+$background-color:                #EBEFF3;
+$border-light-color:              #EBEFF3;
+$linkColor:                       #2C5CC5;
+$white: #fff;
+$inputDisabledBackground:         #F7F9FA;
+$title-small:                       14px;
+$primary-text-color-1:            #12344D;
+$text-weight-normal:                400;
+$disabled-text-color:             #92A2B1;
+$border-dark-color:               #CFD7DF;
+$btnBackground:                     linear-gradient(180deg, #FFFFFF 0%, #F5F7F9 100%)   !default;
+$background-color-2:              #F5F7F9;
+$text-weight-semi-bold:             600;
+$text-normal:                       12px;
+$section-background-blue:         #E5F2FD;
+$text-weight-medium:                500;
+*/
+
 /* docs */
 .docs-bg-code-base {
   background-color: #fff !important;
@@ -32,17 +54,6 @@
   background-color: black;
 }
 
-button:not(.ember-power-calendar-day) {
-  background: linear-gradient(180deg, #264966 0%, #12344d 100%);
-  color: #fff;
-  font-weight: 500;
-  border: 1px solid #12344D;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
 .ember-form {
   background: #f0f0f0;
   padding: 20px;
@@ -61,15 +72,107 @@ a {
   cursor: pointer;
 }
 
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 4px 12px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7f9 100%);
+  border: 1px solid #CFD7DF;
+  border-radius: 4px;
+  color: #12344D !important;
+  font-weight: 600;
+  margin-right: 8px;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #264966 0%, #12344d 100%);
+  color: #fff !important;
+  font-weight: 600;
+  border: 1px solid #12344D;
+  -moz-box-shadow: 0 1px 0 0 rgba(24, 50, 71, 0.05);
+  -webkit-box-shadow: 0 1px 0 0 rgb(24 50 71 / 5%);
+  box-shadow: 0 1px 0 0 rgb(24 50 71 / 5%);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #2C5CC5;
+}
+
+* {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif !important;
+}
+
 /* form css  */
+
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 4px 12px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7f9 100%);
+  border: 1px solid #CFD7DF;
+  border-radius: 4px;
+  color: #12344D !important;
+  font-weight: 600;
+  margin-right: 8px;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #264966 0%, #12344d 100%);
+  color: #fff !important;
+  font-weight: 600;
+  border: 1px solid #12344D;
+  -moz-box-shadow: 0 1px 0 0 rgba(24, 50, 71, 0.05);
+  -webkit-box-shadow: 0 1px 0 0 rgb(24 50 71 / 5%);
+  box-shadow: 0 1px 0 0 rgb(24 50 71 / 5%);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #2C5CC5;
+}
+
+* {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif !important;
+}
+
 form {
    outline: none;
+   width: 500px;
 }
  form .form-field {
    margin: 16px 0;
+   flex-direction: column;
+   align-items: flex-start !important;
 }
+
+ form .radio-field.form-field, form .checkbox-group .checkbox-field.form-field {
+  flex-direction: row;
+}
+ 
  form .form-field.form-field--has-errors > input, form .form-field.form-field--has-errors > textarea, form .form-field.form-field--has-errors .ember-basic-dropdown-trigger {
    border-color: #d72d30 !important;
+}
 }
  form .form-field:not(.form-field--has-errors) > input:focus, form .form-field:not(.form-field--has-errors) textarea:focus {
    border-color: #2c5cc5 !important;
@@ -911,6 +1014,7 @@ button:focus, button:active {
 }
  .ember-basic-dropdown .ember-power-select-trigger .ember-power-select-placeholder {
    font-weight: 500;
+   font-size: 14px;
    color: rgba(18, 52, 77, 0.7);
    margin-left: 8px;
    display: block;
@@ -1050,10 +1154,28 @@ button:focus, button:active {
    content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='12px' height='9px' viewBox='0 0 12 9' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3ECheck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3Cpath d='M4.17095654,7.28764233 C3.74936256,6.89579049 3.08481084,6.91447629 2.68663874,7.32937825 C2.28846663,7.7442802 2.30745383,8.39828338 2.72904782,8.79013522 L5.87904631,11.7179111 C6.3006403,12.109763 6.96519201,12.0910772 7.36336412,11.6761752 L13.3133613,5.47617918 C13.7115334,5.06127722 13.6925462,4.40727405 13.2709522,4.0154222 C12.8493582,3.62357036 12.1848065,3.64225616 11.7866344,4.05715812 L6.55759159,9.50590771 L4.17095654,7.28764233 Z' id='path-1'%3E%3C/path%3E%3C/defs%3E%3Cg id='TD-with-Freddy-4-Email' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ticket-detail--open-copy-2' transform='translate(-1054.000000, -997.000000)'%3E%3Cg id='Group-92' transform='translate(880.000000, 828.000000)'%3E%3Cg id='Group-26'%3E%3Cg id='Group-7' transform='translate(0.000000, 54.000000)'%3E%3Cg id='Group-2' transform='translate(16.000000, 104.000000)'%3E%3Cg id='Icon/new/Check' transform='translate(156.000000, 8.000000)'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'%3E%3C/use%3E%3C/mask%3E%3Cuse id='save' fill='%23000000' fill-rule='nonzero' xlink:href='%23path-1'%3E%3C/use%3E%3Cg id='Color/Blue-(Hype)' mask='url(%23mask-2)' fill='%232C5CC5' fill-rule='evenodd'%3E%3Crect id='Color---Jade' x='0' y='0' width='15.8024691' height='15.8024691'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* field css */
-.date-field .date-picker-wrapper, .date-range-field .date-picker-wrapper, .date-time-split-field .date-picker-wrapper {
+/* date picker css */
+.date-time-field-icon, .date-field .date-picker-wrapper .ember-svg-trigger span, .date-range-field .date-picker-wrapper .ember-svg-trigger span, .date-time-split-field .date-picker-wrapper .ember-svg-trigger span, .time-picker-wrapper .time-picker-icon {
+   position: relative;
+   height: 24px;
+   min-width: 24px;
+   background: #ebeff3;
    display: flex;
    align-items: center;
+   justify-content: center;
+   border-radius: 4px;
+}
+ .date-time-field-icon::before, .date-field .date-picker-wrapper .ember-svg-trigger span::before, .date-range-field .date-picker-wrapper .ember-svg-trigger span::before, .date-time-split-field .date-picker-wrapper .ember-svg-trigger span::before, .time-picker-wrapper .time-picker-icon::before {
+   content: "";
+   position: absolute;
+   left: -5px;
+   border-left: 1px solid #ebeff3;
+   height: 100%;
+}
+ .date-field .date-picker-wrapper, .date-range-field .date-picker-wrapper, .date-time-split-field .date-picker-wrapper {
+   display: flex;
+   align-items: center;
+   max-width: 350px;
 }
  .date-field .date-picker-wrapper .btn-no-bg, .date-range-field .date-picker-wrapper .btn-no-bg, .date-time-split-field .date-picker-wrapper .btn-no-bg {
    padding: 4px;
@@ -1069,34 +1191,17 @@ button:focus, button:active {
  .date-field .date-picker-wrapper .btn-no-bg svg, .date-range-field .date-picker-wrapper .btn-no-bg svg, .date-time-split-field .date-picker-wrapper .btn-no-bg svg {
    fill: #2c5cc5;
 }
- .date-field .date-picker-wrapper .ember-svg-trigger:focus span, .date-range-field .date-picker-wrapper .ember-svg-trigger:focus span, .date-time-split-field .date-picker-wrapper .ember-svg-trigger:focus span, .date-field .date-picker-wrapper .ember-svg-trigger:active span, .date-range-field .date-picker-wrapper .ember-svg-trigger:active span, .date-time-split-field .date-picker-wrapper .ember-svg-trigger:active span {
+ .date-field .date-picker-wrapper .ember-svg-trigger:not([aria-disabled="true"]):focus span, .date-range-field .date-picker-wrapper .ember-svg-trigger:not([aria-disabled="true"]):focus span, .date-time-split-field .date-picker-wrapper .ember-svg-trigger:not([aria-disabled="true"]):focus span, .date-field .date-picker-wrapper .ember-svg-trigger:not([aria-disabled="true"]):active span, .date-range-field .date-picker-wrapper .ember-svg-trigger:not([aria-disabled="true"]):active span, .date-time-split-field .date-picker-wrapper .ember-svg-trigger:not([aria-disabled="true"]):active span {
    height: 22px;
    min-width: 22px;
    border: 1px solid #2c5cc5;
    box-shadow: 0 0 0 1px #2c5cc5;
 }
- .date-field .date-picker-wrapper .ember-svg-trigger span, .date-range-field .date-picker-wrapper .ember-svg-trigger span, .date-time-split-field .date-picker-wrapper .ember-svg-trigger span, .date-field .date-picker-wrapper .time-picker-wrapper .time-picker-icon, .date-range-field .date-picker-wrapper .time-picker-wrapper .time-picker-icon, .date-time-split-field .date-picker-wrapper .time-picker-wrapper .time-picker-icon {
-   position: relative;
-   height: 24px;
-   min-width: 24px;
-   background: #ebeff3;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border-radius: 4px;
-}
- .date-field .date-picker-wrapper .ember-svg-trigger span::before, .date-range-field .date-picker-wrapper .ember-svg-trigger span::before, .date-time-split-field .date-picker-wrapper .ember-svg-trigger span::before, .date-field .date-picker-wrapper .time-picker-wrapper .time-picker-icon::before, .date-range-field .date-picker-wrapper .time-picker-wrapper .time-picker-icon::before, .date-time-split-field .date-picker-wrapper .time-picker-wrapper .time-picker-icon::before {
-   content: "";
-   position: absolute;
-   left: -5px;
-   border-left: 1px solid #ebeff3;
-   height: 100%;
-}
  .date-field .date-field-wrapper, .date-range-field .date-field-wrapper, .date-time-split-field .date-field-wrapper, .date-field .date-range-field-wrapper, .date-range-field .date-range-field-wrapper, .date-time-split-field .date-range-field-wrapper, .date-field .date-time-split-field-wrapper, .date-range-field .date-time-split-field-wrapper, .date-time-split-field .date-time-split-field-wrapper {
    width: 100%;
    position: relative;
 }
- .date-field .date-field-wrapper input, .date-range-field .date-field-wrapper input, .date-time-split-field .date-field-wrapper input, .date-field .date-range-field-wrapper input, .date-range-field .date-range-field-wrapper input, .date-time-split-field .date-range-field-wrapper input, .date-field .date-time-split-field-wrapper input, .date-range-field .date-time-split-field-wrapper input, .date-time-split-field .date-time-split-field-wrapper input {
+ .date-field .date-field-wrapper .date-text-field, .date-range-field .date-field-wrapper .date-text-field, .date-time-split-field .date-field-wrapper .date-text-field, .date-field .date-range-field-wrapper .date-text-field, .date-range-field .date-range-field-wrapper .date-text-field, .date-time-split-field .date-range-field-wrapper .date-text-field, .date-field .date-time-split-field-wrapper .date-text-field, .date-range-field .date-time-split-field-wrapper .date-text-field, .date-time-split-field .date-time-split-field-wrapper .date-text-field, .date-field .date-field-wrapper .date-range-text-field, .date-range-field .date-field-wrapper .date-range-text-field, .date-time-split-field .date-field-wrapper .date-range-text-field, .date-field .date-range-field-wrapper .date-range-text-field, .date-range-field .date-range-field-wrapper .date-range-text-field, .date-time-split-field .date-range-field-wrapper .date-range-text-field, .date-field .date-time-split-field-wrapper .date-range-text-field, .date-range-field .date-time-split-field-wrapper .date-range-text-field, .date-time-split-field .date-time-split-field-wrapper .date-range-text-field {
    padding: 4px 40px 4px 8px;
    width: 100%;
 }
@@ -1104,8 +1209,8 @@ button:focus, button:active {
    position: unset;
 }
  .date-field .date-text-field, .date-range-field .date-text-field, .date-time-split-field .date-text-field, .date-field .date-range-text-field, .date-range-field .date-range-text-field, .date-time-split-field .date-range-text-field {
-   background-color: #fff;
-   cursor: pointer !important;
+   background-color: #fff !important;
+   cursor: default !important;
 }
  .date-field .date-text-field[disabled], .date-range-field .date-text-field[disabled], .date-time-split-field .date-text-field[disabled], .date-field .date-range-text-field[disabled], .date-range-field .date-range-text-field[disabled], .date-time-split-field .date-range-text-field[disabled] {
    cursor: not-allowed !important;
@@ -1142,13 +1247,13 @@ button:focus, button:active {
  .date-field .ember-power-calendar-days .ember-power-calendar-weekday, .date-range-field .ember-power-calendar-days .ember-power-calendar-weekday, .date-time-split-field .ember-power-calendar-days .ember-power-calendar-weekday {
    font-size: 14px;
    color: #12344d;
-   margin-top: 8px;
-   margin-bottom: 8px;
+   margin: 8px 8px 8px 0;
    min-width: 16px;
    font-weight: 400;
 }
  .date-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day, .date-range-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day, .date-time-split-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day {
    font-size: 14px;
+   font-family: inherit;
    width: 24px;
    height: 24px;
    margin-bottom: 8px;
@@ -1162,6 +1267,10 @@ button:focus, button:active {
 }
  .date-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day:not([disabled]), .date-range-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day:not([disabled]), .date-time-split-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day:not([disabled]) {
    cursor: pointer;
+}
+ .date-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day[disabled], .date-range-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day[disabled], .date-time-split-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day[disabled] {
+   cursor: not-allowed;
+   pointer-events: none;
 }
  .date-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day:hover, .date-range-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day:hover, .date-time-split-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day:hover {
    background-color: #ebeff3;
@@ -1182,10 +1291,11 @@ button:focus, button:active {
    font-weight: 400;
 }
  .date-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day--focused:not(:hover), .date-range-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day--focused:not(:hover), .date-time-split-field .ember-power-calendar-days .ember-power-calendar-week .ember-power-calendar-day--focused:not(:hover) {
-   border: 1px solid #2c5cc5;
+   border: 1px solid #2c5cc5 !important;
    box-shadow: 0 0 0 1px #2c5cc5;
    color: #2c5cc5;
    background: none;
+   border-radius: 4px;
 }
  .date-field .ember-power-calendar-month-year, .date-range-field .ember-power-calendar-month-year, .date-time-split-field .ember-power-calendar-month-year {
    display: inline-flex;
@@ -1193,22 +1303,25 @@ button:focus, button:active {
  .date-field .ember-power-calendar-month-year .ember-basic-dropdown-content, .date-range-field .ember-power-calendar-month-year .ember-basic-dropdown-content, .date-time-split-field .ember-power-calendar-month-year .ember-basic-dropdown-content {
    width: 120px !important;
    padding: 0;
+   left: unset;
 }
  .date-field .ember-power-calendar-month-year .ember-power-select-trigger, .date-range-field .ember-power-calendar-month-year .ember-power-select-trigger, .date-time-split-field .ember-power-calendar-month-year .ember-power-select-trigger {
-   background: linear-gradient(180deg, #fff 0%, #f5f7f9 100%) !default;
+   background: linear-gradient(180deg, #fff 0%, #f5f7f9 100%);
    display: inline-flex;
    margin: 0;
 }
  .date-field .ember-power-calendar-month-year .ember-power-select-trigger:hover, .date-range-field .ember-power-calendar-month-year .ember-power-select-trigger:hover, .date-time-split-field .ember-power-calendar-month-year .ember-power-select-trigger:hover {
    border-color: #cfd7df;
 }
+ .date-field .ember-power-calendar-month-year .ember-power-select-trigger[aria-expanded="true"], .date-range-field .ember-power-calendar-month-year .ember-power-select-trigger[aria-expanded="true"], .date-time-split-field .ember-power-calendar-month-year .ember-power-select-trigger[aria-expanded="true"], .date-field .ember-power-calendar-month-year .ember-power-select-trigger:focus, .date-range-field .ember-power-calendar-month-year .ember-power-select-trigger:focus, .date-time-split-field .ember-power-calendar-month-year .ember-power-select-trigger:focus {
+   z-index: 1;
+}
  .date-field .ember-power-calendar-month-year .calendar-dropdown-month .ember-power-select-trigger, .date-range-field .ember-power-calendar-month-year .calendar-dropdown-month .ember-power-select-trigger, .date-time-split-field .ember-power-calendar-month-year .calendar-dropdown-month .ember-power-select-trigger {
-   border-right: none;
    border-top-right-radius: 0 !important;
    border-bottom-right-radius: 0 !important;
 }
  .date-field .ember-power-calendar-month-year .calendar-dropdown-year .ember-power-select-trigger, .date-range-field .ember-power-calendar-month-year .calendar-dropdown-year .ember-power-select-trigger, .date-time-split-field .ember-power-calendar-month-year .calendar-dropdown-year .ember-power-select-trigger {
-   border-left: none;
+   border-left-color: transparent;
    border-top-left-radius: 0 !important;
    border-bottom-left-radius: 0 !important;
 }
@@ -1219,17 +1332,18 @@ button:focus, button:active {
    outline: none;
    border: 1px solid transparent;
    padding: 0;
-   width: 20px;
-   height: 20px;
+   width: 32px;
+   height: 32px;
    cursor: pointer;
    border-radius: 4px;
    background: none;
-}
- .date-field .ember-power-calendar-nav-buttons button:first-child, .date-range-field .ember-power-calendar-nav-buttons button:first-child, .date-time-split-field .ember-power-calendar-nav-buttons button:first-child {
-   margin-right: 4px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
  .date-field .ember-power-calendar-nav-buttons button:hover, .date-range-field .ember-power-calendar-nav-buttons button:hover, .date-time-split-field .ember-power-calendar-nav-buttons button:hover {
-   background: #f3f5f7;
+   background: #fff;
+   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.13);
 }
  .date-field .ember-power-calendar-nav-buttons button:focus, .date-range-field .ember-power-calendar-nav-buttons button:focus, .date-time-split-field .ember-power-calendar-nav-buttons button:focus {
    border: 1px solid #2c5cc5;
@@ -1238,15 +1352,121 @@ button:focus, button:active {
  .date-field .ember-power-calendar-nav-buttons button svg, .date-range-field .ember-power-calendar-nav-buttons button svg, .date-time-split-field .ember-power-calendar-nav-buttons button svg {
    width: 20px;
    height: 20px;
+   fill: #12344d;
 }
- .date-field .ember-power-calendar-nav-buttons button:disabled, .date-range-field .ember-power-calendar-nav-buttons button:disabled, .date-time-split-field .ember-power-calendar-nav-buttons button:disabled, .date-field .ember-power-calendar-nav-buttons button[disabled] svg, .date-range-field .ember-power-calendar-nav-buttons button[disabled] svg, .date-time-split-field .ember-power-calendar-nav-buttons button[disabled] svg {
+ .date-field .ember-power-calendar-nav-buttons button:disabled svg, .date-range-field .ember-power-calendar-nav-buttons button:disabled svg, .date-time-split-field .ember-power-calendar-nav-buttons button:disabled svg, .date-field .ember-power-calendar-nav-buttons button[disabled] svg, .date-range-field .ember-power-calendar-nav-buttons button[disabled] svg, .date-time-split-field .ember-power-calendar-nav-buttons button[disabled] svg {
    fill: #92a2b1;
+}
+ .date-field .date-range-picker-container-footer, .date-range-field .date-range-picker-container-footer, .date-time-split-field .date-range-picker-container-footer {
+   border-top: 1px solid #ebeff3;
+   background: #f5f7f9;
+   width: calc(100% + 48px);
+   padding: 8px;
+   margin: 4px 0 0 -24px;
+   display: flex;
+   justify-content: flex-end;
+}
+ .date-field .date-range-picker-container-footer .btn-reset, .date-range-field .date-range-picker-container-footer .btn-reset, .date-time-split-field .date-range-picker-container-footer .btn-reset {
+   margin-right: auto;
+   font-weight: 600;
+}
+ .date-field .date-range-picker-container-footer .btn-primary, .date-range-field .date-range-picker-container-footer .btn-primary, .date-time-split-field .date-range-picker-container-footer .btn-primary {
+   margin-right: 0;
+}
+ .date-field .date-range-text-field, .date-range-field .date-range-text-field, .date-time-split-field .date-range-text-field {
+   cursor: pointer !important;
+   font-size: 12px;
+   font-family: inherit;
+   font-weight: 600;
+}
+ .date-field .date-range-text-field.focus, .date-range-field .date-range-text-field.focus, .date-time-split-field .date-range-text-field.focus {
+   border-color: #2c5cc5;
+   box-shadow: 0 0 0 1px #2c5cc5;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container, .date-range-field .date-range-field-wrapper .date-range-picker-container, .date-time-split-field .date-range-field-wrapper .date-range-picker-container {
    display: flex;
 }
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation {
+   justify-content: center;
+   margin-bottom: 8px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation .ember-power-calendar-month-year-label, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation .ember-power-calendar-month-year-label, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation .ember-power-calendar-month-year-label {
+   display: inline-block;
+   margin-bottom: 4px;
+   font-size: 12px;
+   font-weight: 600;
+   padding-left: 4px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation.ember-power-calendar-left-navigation .ember-power-calendar-nav-buttons, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation.ember-power-calendar-left-navigation .ember-power-calendar-nav-buttons, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation.ember-power-calendar-left-navigation .ember-power-calendar-nav-buttons {
+   position: absolute;
+   left: -8px;
+   top: 22px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation.ember-power-calendar-right-navigation .ember-power-calendar-nav-buttons, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation.ember-power-calendar-right-navigation .ember-power-calendar-nav-buttons, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-navigation.ember-power-calendar-right-navigation .ember-power-calendar-nav-buttons {
+   position: absolute;
+   right: -8px;
+   top: 22px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-right, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-right, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-right {
+   padding-left: 24px;
+}
  .date-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-left, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-left, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-left {
-   margin-right: 16px;
+   position: relative;
+   padding-right: 16px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-left:after, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-left:after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-range-picker-left:after {
+   position: absolute;
+   content: "";
+   height: 70%;
+   width: 1px;
+   right: 0;
+   background: #ebeff3;
+   top: 75px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .range-highlighter, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] .date-field .date-range-field-wrapper .date-range-picker-container button::before, .date-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] .date-field .date-range-field-wrapper .date-range-picker-container button::before, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] .date-field .date-range-field-wrapper .date-range-picker-container button::before, .date-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] .date-field .date-range-field-wrapper .date-range-picker-container button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .range-highlighter, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] .date-range-field .date-range-field-wrapper .date-range-picker-container button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] .date-range-field .date-range-field-wrapper .date-range-picker-container button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] .date-range-field .date-range-field-wrapper .date-range-picker-container button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] .date-range-field .date-range-field-wrapper .date-range-picker-container button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .range-highlighter, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] .date-time-split-field .date-range-field-wrapper .date-range-picker-container button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] .date-time-split-field .date-range-field-wrapper .date-range-picker-container button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] .date-time-split-field .date-range-field-wrapper .date-range-picker-container button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] .date-time-split-field .date-range-field-wrapper .date-range-picker-container button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before {
+   content: "";
+   position: absolute;
+   top: -1px;
+   width: 12px;
+   background: #e5f2fd;
+   height: 24px;
+   z-index: -1;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered {
+   border-radius: 0;
+   border: 1px solid #e5f2fd !important;
+   background: #e5f2fd !important;
+   color: #12344d !important;
+   position: relative;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--selected::after, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hovered::after {
+   right: -12px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover {
+   position: relative;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--hover:hover::after {
+   right: -12px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-start-of-week="true"], .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-start-of-week="true"], .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-start-of-week="true"] {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-end-of-week="true"], .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-end-of-week="true"], .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-end-of-week="true"] {
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-end-of-week="true"]::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-end-of-week="true"]::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day[data-is-end-of-week="true"]::after {
+   visibility: hidden;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-start, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-start, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-start, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-end, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-end, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-end {
+   border: 1px solid #2c5cc5 !important;
+   background: #2c5cc5 !important;
+   color: #fff !important;
+   border-radius: 4px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-start::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-start::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-start::after, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-end::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-end::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-day--range-end::after {
+   display: none;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row {
    display: flex;
@@ -1255,83 +1475,171 @@ button:focus, button:active {
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:first-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:first-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:first-child {
    padding-left: 32px;
 }
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:first-child button, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:first-child button, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:first-child button {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+}
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:last-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:last-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:last-child {
    padding-right: 32px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:last-child button::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:last-child button::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="1"]:last-child button::after {
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:first-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:first-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:first-child {
    padding-left: 64px;
 }
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:first-child button, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:first-child button, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:first-child button {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+}
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:last-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:last-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:last-child {
    padding-right: 64px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:last-child button::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:last-child button::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="2"]:last-child button::after {
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:first-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:first-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:first-child {
    padding-left: 96px;
 }
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:first-child button, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:first-child button, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:first-child button {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+}
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:last-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:last-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:last-child {
    padding-right: 96px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:last-child button::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:last-child button::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="3"]:last-child button::after {
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:first-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:first-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:first-child {
    padding-left: 128px;
 }
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:first-child button, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:first-child button, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:first-child button {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+}
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:last-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:last-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:last-child {
    padding-right: 128px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:last-child button::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:last-child button::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="4"]:last-child button::after {
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:first-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:first-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:first-child {
    padding-left: 160px;
 }
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:first-child button, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:first-child button, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:first-child button {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+}
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:last-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:last-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:last-child {
    padding-right: 160px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:last-child button::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:last-child button::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="5"]:last-child button::after {
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:first-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:first-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:first-child {
    padding-left: 192px;
 }
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:first-child button, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:first-child button, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:first-child button {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+}
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:last-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:last-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:last-child {
    padding-right: 192px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:last-child button::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:last-child button::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="6"]:last-child button::after {
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:first-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:first-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:first-child {
    padding-left: 224px;
 }
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:first-child button, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:first-child button, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:first-child button {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+}
  .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:last-child, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:last-child, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:last-child {
    padding-right: 224px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:last-child button::after, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:last-child button::after, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row[data-missing-days="7"]:last-child button::after {
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
+}
+ .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[aria-selected="true"] button::before, .date-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-range-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before, .date-time-split-field .date-range-field-wrapper .date-range-picker-container .ember-power-calendar-row td[data-is-range-start="true"] + td[data-hovered="true"] button::before {
+   left: -12px;
 }
  .date-field .date-time-split-field-wrapper, .date-range-field .date-time-split-field-wrapper, .date-time-split-field .date-time-split-field-wrapper {
    display: flex;
    align-items: center;
 }
- .date-field .date-time-split-field-wrapper .time-picker-wrapper, .date-range-field .date-time-split-field-wrapper .time-picker-wrapper, .date-time-split-field .date-time-split-field-wrapper .time-picker-wrapper {
+ .time-picker-wrapper {
    display: flex;
    align-items: center;
    position: relative;
    margin-left: 8px;
 }
- .date-field .date-time-split-field-wrapper .time-picker-wrapper .time-control, .date-range-field .date-time-split-field-wrapper .time-picker-wrapper .time-control, .date-time-split-field .date-time-split-field-wrapper .time-picker-wrapper .time-control {
+ .time-picker-wrapper .time-control {
    width: 112px;
 }
- .date-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-power-select-trigger, .date-range-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-power-select-trigger, .date-time-split-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-power-select-trigger {
+ .time-picker-wrapper .time-control .ember-power-select-trigger {
    width: 110px;
    padding-right: 0;
 }
- .date-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-power-select-status-icon, .date-range-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-power-select-status-icon, .date-time-split-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-power-select-status-icon {
+ .time-picker-wrapper .time-control .ember-power-select-status-icon {
    display: none;
 }
- .date-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-basic-dropdown-content, .date-range-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-basic-dropdown-content, .date-time-split-field .date-time-split-field-wrapper .time-picker-wrapper .time-control .ember-basic-dropdown-content {
-   width: 130px;
+ .time-picker-wrapper .time-control .ember-basic-dropdown-content {
+   width: 130px !important;
 }
- .date-field .date-time-split-field-wrapper .time-picker-wrapper .time-picker-icon, .date-range-field .date-time-split-field-wrapper .time-picker-wrapper .time-picker-icon, .date-time-split-field .date-time-split-field-wrapper .time-picker-wrapper .time-picker-icon {
+ .time-picker-wrapper .time-control .ember-power-select-selected-item, .time-picker-wrapper .time-control .ember-power-select-option {
+   font-weight: 500;
+   font-size: 14px;
+}
+ .time-picker-wrapper .time-picker-icon {
    position: absolute;
    right: 6px;
 }
+ .date-range-control .date-range-dropdown-content {
+   padding: 16px 24px 0 !important;
+}
+ .module-view-query-form .date-range-field {
+   margin-left: 16px !important;
+   position: relative;
+}
+ .module-view-query-form .date-range-field .form-field--label {
+   display: inline-block !important;
+}
+ .module-view-query-form .date-range-field::before {
+   position: absolute;
+   content: "";
+   border-left: 1px dotted #92a2b1;
+   left: -10px;
+   height: 100%;
+}
  .date-range-field .repositionfor-sidebar {
+   position: fixed !important;
+   right: 24px !important;
    left: unset !important;
 }
  html[dir="rtl"] .date-range-field .repositionfor-sidebar {
+   position: fixed !important;
+   left: 24px !important;
    right: unset !important;
 }
- .date-time-split-field .date-picker-wrapper {
-   min-width: 115px;
-   max-width: 330px;
+ .page-sidebar .date-time-split-field .date-time-picker-wrapper {
+   max-width: 150px;
 }
-
-form {
-  width: 500px;
+ .page-sidebar .date-field .date-picker-wrapper, .page-sidebar .date-range-field .date-picker-wrapper {
+   max-width: 300px;
+}
+ .page-content .date-range-field .date-picker-wrapper, .ember-modal-dialog .date-range-field .date-picker-wrapper {
+   max-width: 235px;
+}
+ .page-content .date-time-split-field .date-time-picker-wrapper, .ember-modal-dialog .date-time-split-field .date-time-picker-wrapper, .page-content .date-field .date-picker-wrapper, .ember-modal-dialog .date-field .date-picker-wrapper {
+   max-width: 200px;
 }

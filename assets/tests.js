@@ -62,7 +62,7 @@ define('dummy/tests/app.lint-test', [], function () {
 
   QUnit.test('components/fields/date-range-field/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/fields/date-range-field/component.js should pass ESLint\n\n15:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n19:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
+    assert.ok(false, 'components/fields/date-range-field/component.js should pass ESLint\n\n1:8 - \'moment\' is defined but never used. (no-unused-vars)\n5:15 - \'setProperties\' is defined but never used. (no-unused-vars)\n15:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n19:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
   });
 
   QUnit.test('components/fields/date-time-field/component.js', function (assert) {
@@ -122,7 +122,7 @@ define('dummy/tests/app.lint-test', [], function () {
 
   QUnit.test('components/sample-form/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/sample-form/component.js should pass ESLint\n\n60:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n62:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n83:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n109:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n123:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n130:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n134:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n159:8 - \'hljs\' is not defined. (no-undef)\n160:7 - \'hljs\' is not defined. (no-undef)\n192:7 - \'hljs\' is not defined. (no-undef)');
+    assert.ok(false, 'components/sample-form/component.js should pass ESLint\n\n60:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n62:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n83:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n109:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n123:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n130:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n134:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n160:8 - \'hljs\' is not defined. (no-undef)\n161:7 - \'hljs\' is not defined. (no-undef)\n197:7 - \'hljs\' is not defined. (no-undef)\n206:19 - \'model\' is defined but never used. (no-unused-vars)\n206:26 - \'property\' is defined but never used. (no-unused-vars)\n206:36 - \'value\' is defined but never used. (no-unused-vars)\n212:9 - Unexpected console statement. (no-console)\n214:9 - Unexpected console statement. (no-console)');
   });
 
   QUnit.test('components/sample-form/fields/autocomplete-fields/multiple-with-create.js', function (assert) {
@@ -152,7 +152,7 @@ define('dummy/tests/app.lint-test', [], function () {
 
   QUnit.test('components/sample-form/fields/date-picker-fields/date-range-field.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/sample-form/fields/date-picker-fields/date-range-field.js should pass ESLint\n\n15:14 - \'moment\' is not defined. (no-undef)\n16:14 - \'moment\' is not defined. (no-undef)\n19:13 - \'moment\' is not defined. (no-undef)\n20:11 - \'moment\' is not defined. (no-undef)');
+    assert.ok(true, 'components/sample-form/fields/date-picker-fields/date-range-field.js should pass ESLint\n\n');
   });
 
   QUnit.test('components/sample-form/fields/date-picker-fields/date-time-field.js', function (assert) {
@@ -242,7 +242,7 @@ define('dummy/tests/app.lint-test', [], function () {
 
   QUnit.test('constants/date-picker-fields/date-range-field.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'constants/date-picker-fields/date-range-field.js should pass ESLint\n\n15:14 - \'moment\' is not defined. (no-undef)\n16:14 - \'moment\' is not defined. (no-undef)\n19:13 - \'moment\' is not defined. (no-undef)\n20:11 - \'moment\' is not defined. (no-undef)');
+    assert.ok(true, 'constants/date-picker-fields/date-range-field.js should pass ESLint\n\n');
   });
 
   QUnit.test('constants/date-picker-fields/date-time-field.js', function (assert) {
@@ -36410,17 +36410,17 @@ define('dummy/tests/templates.template.lint-test', [], function () {
 
   QUnit.test('dummy/components/fields/date-field/template.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'dummy/components/fields/date-field/template.hbs should pass TemplateLint.\n\ndummy/components/fields/date-field/template.hbs\n  11:6  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  9:6  error  Incorrect indentation for `{{f.drawForm}}` beginning at L9:C6. Expected `{{f.drawForm}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  10:6  error  Incorrect indentation for `{{f.submit}}` beginning at L10:C6. Expected `{{f.submit}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  11:6  error  Incorrect indentation for `<button>` beginning at L11:C6. Expected `<button>` to be at an indentation of 4 but was found at 6.  block-indentation\n');
+    assert.ok(false, 'dummy/components/fields/date-field/template.hbs should pass TemplateLint.\n\ndummy/components/fields/date-field/template.hbs\n  9:6  error  Incorrect indentation for `{{f.drawForm}}` beginning at L9:C6. Expected `{{f.drawForm}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  10:6  error  Incorrect indentation for `{{f.submit}}` beginning at L10:C6. Expected `{{f.submit}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  11:6  error  Incorrect indentation for `<button>` beginning at L11:C6. Expected `<button>` to be at an indentation of 4 but was found at 6.  block-indentation\n');
   });
 
   QUnit.test('dummy/components/fields/date-range-field/template.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'dummy/components/fields/date-range-field/template.hbs should pass TemplateLint.\n\ndummy/components/fields/date-range-field/template.hbs\n  11:6  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  9:6  error  Incorrect indentation for `{{f.drawForm}}` beginning at L9:C6. Expected `{{f.drawForm}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  10:6  error  Incorrect indentation for `{{f.submit}}` beginning at L10:C6. Expected `{{f.submit}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  11:6  error  Incorrect indentation for `<button>` beginning at L11:C6. Expected `<button>` to be at an indentation of 4 but was found at 6.  block-indentation\n');
+    assert.ok(false, 'dummy/components/fields/date-range-field/template.hbs should pass TemplateLint.\n\ndummy/components/fields/date-range-field/template.hbs\n  9:6  error  Incorrect indentation for `{{f.drawForm}}` beginning at L9:C6. Expected `{{f.drawForm}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  10:6  error  Incorrect indentation for `{{f.submit}}` beginning at L10:C6. Expected `{{f.submit}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  11:6  error  Incorrect indentation for `<button>` beginning at L11:C6. Expected `<button>` to be at an indentation of 4 but was found at 6.  block-indentation\n');
   });
 
   QUnit.test('dummy/components/fields/date-time-field/template.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'dummy/components/fields/date-time-field/template.hbs should pass TemplateLint.\n\ndummy/components/fields/date-time-field/template.hbs\n  11:6  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  9:6  error  Incorrect indentation for `{{f.drawForm}}` beginning at L9:C6. Expected `{{f.drawForm}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  10:6  error  Incorrect indentation for `{{f.submit}}` beginning at L10:C6. Expected `{{f.submit}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  11:6  error  Incorrect indentation for `<button>` beginning at L11:C6. Expected `<button>` to be at an indentation of 4 but was found at 6.  block-indentation\n');
+    assert.ok(false, 'dummy/components/fields/date-time-field/template.hbs should pass TemplateLint.\n\ndummy/components/fields/date-time-field/template.hbs\n  9:6  error  Incorrect indentation for `{{f.drawForm}}` beginning at L9:C6. Expected `{{f.drawForm}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  10:6  error  Incorrect indentation for `{{f.submit}}` beginning at L10:C6. Expected `{{f.submit}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  11:6  error  Incorrect indentation for `<button>` beginning at L11:C6. Expected `<button>` to be at an indentation of 4 but was found at 6.  block-indentation\n');
   });
 
   QUnit.test('dummy/components/fields/dependent-field-checkbox/template.hbs', function (assert) {
@@ -36475,7 +36475,7 @@ define('dummy/tests/templates.template.lint-test', [], function () {
 
   QUnit.test('dummy/components/sample-form/template.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'dummy/components/sample-form/template.hbs should pass TemplateLint.\n\ndummy/components/sample-form/template.hbs\n  12:4  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  15:4  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  16:4  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  17:4  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  18:4  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  19:4  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  22:4  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  23:4  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  36:6  error  All `<button>` elements should have a valid `type` attribute  require-button-type\n  33:6  error  Incorrect indentation for `{{f.formSearchField}}` beginning at L33:C6. Expected `{{f.formSearchField}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  34:6  error  Incorrect indentation for `{{f.drawForm}}` beginning at L34:C6. Expected `{{f.drawForm}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  35:6  error  Incorrect indentation for `{{f.submit}}` beginning at L35:C6. Expected `{{f.submit}}` to be at an indentation of 4 but was found at 6.  block-indentation\n  36:6  error  Incorrect indentation for `<button>` beginning at L36:C6. Expected `<button>` to be at an indentation of 4 but was found at 6.  block-indentation\n');
+    assert.ok(true, 'dummy/components/sample-form/template.hbs should pass TemplateLint.\n\n');
   });
 
   QUnit.test('dummy/components/suggestion-button/template.hbs', function (assert) {

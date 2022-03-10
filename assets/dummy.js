@@ -1795,8 +1795,8 @@ define("dummy/components/fields/date-field/template", ["exports"], function (_ex
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "Gfc7Q8PE",
-    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
+    "id": "Xu+v2k0O",
+    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
     "meta": {
       "moduleName": "dummy/components/fields/date-field/template.hbs"
     }
@@ -1832,9 +1832,17 @@ define("dummy/components/fields/date-range-field/component", ["exports", "moment
     init: function init() {
       this._super.apply(this, arguments);
 
+      this.overrideFields();
       this.initFormWithTimeZone();
       this.initFormWithLocale();
       this.initModel();
+    },
+    overrideFields: function overrideFields() {
+      // set default value from current user moment    
+      _dateRangeField.default.fieldOptions.defaultValue = {
+        from: this.get('moment').moment().subtract(1, 'months').startOf('day').locale('en').toISOString(),
+        to: this.get('moment').moment().startOf('day').locale('en').toISOString()
+      };
     },
     initFormWithTimeZone: function initFormWithTimeZone() {
       var timezone = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Asia/Kolkata';
@@ -1845,9 +1853,7 @@ define("dummy/components/fields/date-range-field/component", ["exports", "moment
       this.get('moment').setLocale(locale);
     },
     initModel: function initModel() {
-      Ember.set(this, 'model', Ember.get(this, 'store').createRecord('date-field', {
-        dateOfBirth: (0, _moment.default)()
-      }));
+      Ember.set(this, 'model', Ember.get(this, 'store').createRecord('date-field'));
     },
     actions: {
       // model save
@@ -1889,9 +1895,6 @@ define("dummy/components/fields/date-range-field/component", ["exports", "moment
       // dynamic update
       updateform: function updateform(e) {
         e.preventDefault();
-        Ember.setProperties(this.model, {
-          dateOfBirth: '11-10-2021'
-        });
         return false;
       }
     }
@@ -1908,8 +1911,8 @@ define("dummy/components/fields/date-range-field/template", ["exports"], functio
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "EZAIcAX9",
-    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
+    "id": "29j+fEyA",
+    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Range Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
     "meta": {
       "moduleName": "dummy/components/fields/date-range-field/template.hbs"
     }
@@ -2021,8 +2024,8 @@ define("dummy/components/fields/date-time-field/template", ["exports"], function
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "pskxVmpV",
-    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
+    "id": "//cEKQkQ",
+    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Time Split Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
     "meta": {
       "moduleName": "dummy/components/fields/date-time-field/template.hbs"
     }
@@ -4858,7 +4861,7 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
 
   function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-  var dateFields = [_dateField.default, _dateRangeField.default, _dateTimeField.default];
+  var dateFields = [_dateField.default, _dateTimeField.default, _dateRangeField.default];
   var autocompletFields = [_single.default, _singleWithCreate.default, _multiple.default, _multipleWithCreate.default];
   var selectFields = [_single2.default, _multiple2.default];
   var dependentFields = [_nestedField.default, _radioDependentField.default, _checkboxDependentField.default, _dropdownDependentField.default];
@@ -4943,6 +4946,7 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
       this.initFormWithTimeZone();
       this.initFormWithLocale();
       this.initModel();
+      this.overrideFields();
       window.moment = _moment.default;
       Ember.run.next(function () {
         if (getQueryVariable('highlight') === 'true') {
@@ -4957,19 +4961,23 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
         hljs.highlightAll();
       }
     },
+    overrideFields: function overrideFields() {
+      // set default value from current user moment
+      _dateRangeField.default.fieldOptions.defaultValue = {
+        from: this.get('moment').moment().subtract(1, 'months').startOf('day').locale('en').toISOString(),
+        to: this.get('moment').moment().startOf('day').locale('en').toISOString()
+      };
+    },
     initFormWithTimeZone: function initFormWithTimeZone() {
       var timezone = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Asia/Kolkata';
-      this.get('moment').setTimeZone(timezone); // moment.tz.setDefault(timezone);
+      this.get('moment').setTimeZone(timezone);
     },
     initFormWithLocale: function initFormWithLocale() {
       var locale = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'en';
       this.get('moment').setLocale(locale);
     },
     initModel: function initModel() {
-      Ember.set(this, 'model', Ember.get(this, 'store').createRecord('user', {
-        dateOfBirth: (0, _moment.default)(),
-        dateTime: '10-08-2021'
-      }));
+      Ember.set(this, 'model', Ember.get(this, 'store').createRecord('user', {}));
     },
     renderSnippets: function renderSnippets(fields) {
       fields.forEach(function (field) {
@@ -4987,7 +4995,10 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
       });
     },
     actions: {
-      // model save
+      update: function update(model, property, value) {
+        Ember.set(model, property, value);
+      },
+      onFieldChange: function onFieldChange(model, property, value) {},
       save: function save(model) {
         return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
           var _yield$model$validate, validations;
@@ -5003,19 +5014,13 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
                   _yield$model$validate = _context.sent;
                   validations = _yield$model$validate.validations;
 
-                  if (!validations.get('isValid')) {
-                    _context.next = 8;
-                    break;
+                  if (validations.get('isValid')) {
+                    console.log(model.toJSON());
+                  } else {
+                    console.log(validations.get('errors'));
                   }
 
-                  model.save();
-                  _context.next = 9;
-                  break;
-
-                case 8:
-                  throw validations.get('errors');
-
-                case 9:
+                case 5:
                 case "end":
                   return _context.stop();
               }
@@ -5026,14 +5031,7 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
       // dynamic update
       updateform: function updateform(e) {
         e.preventDefault();
-        var dynamicModelUpdate = {
-          dateRange: {
-            from: '01-07-2021',
-            to: '31-08-2021'
-          },
-          dateOfBirth: '11-10-2021',
-          dateTime: '31-08-2021'
-        };
+        var dynamicModelUpdate = {};
         Ember.setProperties(this.model, dynamicModelUpdate);
         return false;
       },
@@ -5230,40 +5228,55 @@ define("dummy/components/sample-form/fields/date-picker-fields/date-field", ["ex
   };
   _exports.default = _default;
 });
-define("dummy/components/sample-form/fields/date-picker-fields/date-range-field", ["exports"], function (_exports) {
+define("dummy/components/sample-form/fields/date-picker-fields/date-range-field", ["exports", "moment"], function (_exports, _moment) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
+  // The ISO 8601 syntax (YYYY-MM-DD) for setting minDate & maxDate
+  // Use service moment for setting defaultValue/minDate/maxDate
+  // Set defaultDate in UTC
   var _default = {
     label: 'Select time period',
-    placeholder: 'Select date range',
     // if no placeholder is givem dateFormat is taken as placeholder
+    placeholder: 'Select date range',
     name: 'dateRange',
     editable: true,
+    required: true,
     disableCamelize: true,
     inputType: 'date-range-field',
     fieldOptions: {
       allowClear: true,
       fieldAlign: true,
-      // startYear: moment('01-07-2015', 'DD-MM-YYYY').year(),
-      // endYear: moment('31-07-2016', 'DD-MM-YYYY').year(),
-      // startMonth: moment('01-07-2015', 'DD-MM-YYYY').month(),
-      // endMonth: moment('31-07-2016', 'DD-MM-YYYY').month(),
-      minDate: moment('01 Jun, 2021'),
-      maxDate: moment('31 Jul, 2022'),
-      dateFormat: 'YYYY, MMM DD',
-      defaultValue: {
-        from: moment().lang('en').subtract(1, 'months').format('YYYY, MMM DD'),
-        to: moment().lang('en').format('YYYY, MMM DD')
-      } // to optimize
-      // rePositionFor: 'sidebar',
-      // positionOptions: {
-      //   wrapper: '.module-view-query-form-wrapper',
-      //   baseHeight: 178
-      // }
+      inlineReset: true,
+      // this will be removed once intl is introduced in form-serv addon
+      translations: {
+        clear: 'Clear',
+        cancel: 'Cancel',
+        update: 'Update',
+        year: 'Year',
+        month: 'Month'
+      },
+      // taken from current account
+      dateFormat: 'DD MMM, YYYY',
+      // always pass moment objects
+      // use getMinDate & getMaxDate util functions from app/constants/date-time.js
+      minDate: (0, _moment.default)(new Date("2011-01-01")).startOf('day'),
+      maxDate: (0, _moment.default)(),
+      defaultValue: {// from: moment().subtract(1, 'months').startOf('day').toISOString(),
+        // to: moment().startOf('day').toISOString()
+      },
+      // used in case of custom positioning is required
+      // js: app/constants/common/form-callbacks/list.js
+      // css: app/styles/form-components/_date-picker.scss
+      // current positionClass used in list page - repositionfor-sidebar
+      positionClass: '',
+      // reuse same class or add class to above scss file
+      calculatePosition: function calculatePosition() {},
+      // calculatePosition
+      calendarToggle: function calendarToggle() {} // calendarToggle
 
     },
     fields: [{
@@ -5818,8 +5831,8 @@ define("dummy/components/sample-form/template", ["exports"], function (_exports)
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "HDNQlRVK",
-    "block": "{\"symbols\":[\"f\",\"field\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[0,\"All fields forms\"],[8],[0,\"\\n  \"],[6,\"div\"],[7],[0,\"\\n\"],[4,\"power-select-multiple\",null,[[\"options\",\"placeholder\",\"onchange\",\"selected\"],[[20,[\"fieldOptions\"]],\"select a particular field\",[25,\"action\",[[19,0,[]],\"selectField\"],null],[20,[\"fieldsSelected\"]]]],{\"statements\":[[0,\"      \"],[1,[19,2,[]],false],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"    \"],[6,\"br\"],[7],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"all\"],null],null],[7],[0,\"All fields\"],[8],[0,\"\\n    \"],[6,\"br\"],[7],[8],[0,\"\\n    \"],[6,\"p\"],[7],[0,\"Types of fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"date\"],null],null],[7],[0,\"Date fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"normal\"],null],null],[7],[0,\"Normal fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"select\"],null],null],[7],[0,\"Select fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"autocomplete\"],null],null],[7],[0,\"Autocomplete fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"dependent\"],null],null],[7],[0,\"Dependent fields\"],[8],[0,\"\\n    \"],[6,\"br\"],[7],[8],[0,\"\\n    \"],[6,\"p\"],[7],[0,\"To render with code snippets or not\"],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"toggleSnippets\",true],null],null],[7],[0,\"Render with snippets\"],[8],[0,\"\\n    \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"toggleSnippets\",false],null],null],[7],[0,\"Render without snippets\"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[6,\"br\"],[7],[8],[0,\"\\n\\n\"],[4,\"dynamic-form-for\",null,[[\"model\",\"schema\",\"fieldActions\",\"fieldNameToHintComponentMap\",\"save\"],[[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldActions\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[25,\"component\",[[19,1,[\"formSearchField\"]]],[[\"placeholder\"],[\"Search field\"]]],false],[6,\"br\"],[7],[8],[0,\"\\n      \"],[1,[19,1,[\"drawForm\"]],false],[6,\"br\"],[7],[8],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Normal Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
+    "id": "k+CsM/0D",
+    "block": "{\"symbols\":[\"f\",\"field\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[0,\"All fields forms\"],[8],[0,\"\\n  \"],[6,\"div\"],[7],[0,\"\\n\"],[4,\"power-select-multiple\",null,[[\"options\",\"placeholder\",\"onchange\",\"selected\"],[[20,[\"fieldOptions\"]],\"select a particular field\",[25,\"action\",[[19,0,[]],\"selectField\"],null],[20,[\"fieldsSelected\"]]]],{\"statements\":[[0,\"      \"],[1,[19,2,[]],false],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"    \"],[6,\"br\"],[7],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"all\"],null],null],[7],[0,\"All fields\"],[8],[0,\"\\n    \"],[6,\"br\"],[7],[8],[0,\"\\n    \"],[6,\"p\"],[7],[0,\"Types of fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"date\"],null],null],[7],[0,\"Date fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"normal\"],null],null],[7],[0,\"Normal fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"select\"],null],null],[7],[0,\"Select fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"autocomplete\"],null],null],[7],[0,\"Autocomplete fields\"],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"dependent\"],null],null],[7],[0,\"Dependent fields\"],[8],[0,\"\\n    \"],[6,\"br\"],[7],[8],[0,\"\\n    \"],[6,\"p\"],[7],[0,\"To render with code snippets or not\"],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"toggleSnippets\",true],null],null],[7],[0,\"Render with snippets\"],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"toggleSnippets\",false],null],null],[7],[0,\"Render without snippets\"],[8],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"showFields\",\"hide\"],null],null],[7],[0,\"Hide fields\"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[6,\"br\"],[7],[8],[0,\"\\n\\n\"],[4,\"dynamic-form-for\",null,[[\"model\",\"schema\",\"fieldActions\",\"onFieldChange\",\"update\",\"fieldNameToHintComponentMap\",\"save\"],[[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldActions\"]],[25,\"action\",[[19,0,[]],\"onFieldChange\"],null],[25,\"action\",[[19,0,[]],\"update\"],null],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"    \"],[1,[25,\"component\",[[19,1,[\"formSearchField\"]]],[[\"placeholder\"],[\"Search field\"]]],false],[6,\"br\"],[7],[8],[0,\"\\n    \"],[1,[19,1,[\"drawForm\"]],false],[6,\"br\"],[7],[8],[0,\"\\n    \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Normal Save\"],[[\"class\"],[\"btn\"]]],false],[0,\"\\n    \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
     "meta": {
       "moduleName": "dummy/components/sample-form/template.hbs"
     }
@@ -5997,40 +6010,55 @@ define("dummy/constants/date-picker-fields/date-field", ["exports"], function (_
   };
   _exports.default = _default;
 });
-define("dummy/constants/date-picker-fields/date-range-field", ["exports"], function (_exports) {
+define("dummy/constants/date-picker-fields/date-range-field", ["exports", "moment"], function (_exports, _moment) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
     value: true
   });
   _exports.default = void 0;
+  // The ISO 8601 syntax (YYYY-MM-DD) for setting minDate & maxDate
+  // Use service moment for setting defaultValue/minDate/maxDate
+  // Set defaultDate in UTC
   var _default = {
     label: 'Select time period',
+    // if no placeholder is givem dateFormat is taken as placeholder
     placeholder: 'Select date range',
-    // if no placeholder is given dateFormat is taken as placeholder
     name: 'dateRange',
     editable: true,
+    required: true,
     disableCamelize: true,
     inputType: 'date-range-field',
     fieldOptions: {
       allowClear: true,
       fieldAlign: true,
-      // startYear: moment('01-07-2015', 'DD-MM-YYYY').year(),
-      // endYear: moment('31-07-2016', 'DD-MM-YYYY').year(),
-      // startMonth: moment('01-07-2015', 'DD-MM-YYYY').month(),
-      // endMonth: moment('31-07-2016', 'DD-MM-YYYY').month(),
-      minDate: moment('01 Jun, 2021'),
-      maxDate: moment('31 Jul, 2022'),
-      dateFormat: 'YYYY, MMM DD',
-      defaultValue: {
-        from: moment().lang('en').subtract(1, 'months').format('YYYY, MMM DD'),
-        to: moment().lang('en').format('YYYY, MMM DD')
-      } // to optimize
-      // rePositionFor: 'sidebar',
-      // positionOptions: {
-      //   wrapper: '.module-view-query-form-wrapper',
-      //   baseHeight: 178
-      // }
+      inlineReset: true,
+      // this will be removed once intl is introduced in form-serv addon
+      translations: {
+        clear: 'Clear',
+        cancel: 'Cancel',
+        update: 'Update',
+        year: 'Year',
+        month: 'Month'
+      },
+      // taken from current account
+      dateFormat: 'DD MMM, YYYY',
+      // always pass moment objects
+      // use getMinDate & getMaxDate util functions from app/constants/date-time.js
+      minDate: (0, _moment.default)(new Date("2011-01-01")).startOf('day'),
+      maxDate: (0, _moment.default)(),
+      defaultValue: {// from: moment().subtract(1, 'months').startOf('day').toISOString(),
+        // to: moment().startOf('day').toISOString()
+      },
+      // used in case of custom positioning is required
+      // js: app/constants/common/form-callbacks/list.js
+      // css: app/styles/form-components/_date-picker.scss
+      // current positionClass used in list page - repositionfor-sidebar
+      positionClass: '',
+      // reuse same class or add class to above scss file
+      calculatePosition: function calculatePosition() {},
+      // calculatePosition
+      calendarToggle: function calendarToggle() {} // calendarToggle
 
     },
     fields: [{
@@ -6710,7 +6738,7 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
   });
   QUnit.test('addon/components/form-fields/checkbox-group/option/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'addon/components/form-fields/checkbox-group/option/component.js should pass ESLint\n\n');
+    assert.ok(false, 'addon/components/form-fields/checkbox-group/option/component.js should pass ESLint\n\n8:12 - Use brace expansion (ember/use-brace-expansion)');
   });
   QUnit.test('addon/components/form-fields/date-field/component.js', function (assert) {
     assert.expect(1);
@@ -6814,7 +6842,7 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
   });
   QUnit.test('addon/components/power-calendar/days/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'addon/components/power-calendar/days/component.js should pass ESLint\n\n282:9 - Use closure actions, unless you need bubbling (ember/closure-actions)');
+    assert.ok(false, 'addon/components/power-calendar/days/component.js should pass ESLint\n\n6:20 - \'set\' is defined but never used. (no-unused-vars)\n90:30 - \'weekdayFormat\' is assigned a value but never used. (no-unused-vars)\n310:9 - Use closure actions, unless you need bubbling (ember/closure-actions)');
   });
   QUnit.test('addon/components/power-select-multiple-with-create/component.js', function (assert) {
     assert.expect(1);
@@ -6831,6 +6859,10 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
   QUnit.test('addon/components/search-field/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'addon/components/search-field/component.js should pass ESLint\n\n');
+  });
+  QUnit.test('addon/helpers/custom-format.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'addon/helpers/custom-format.js should pass ESLint\n\n');
   });
   QUnit.test('addon/helpers/date-field-format-date.js', function (assert) {
     assert.expect(1);
@@ -7148,6 +7180,10 @@ define("dummy/ember-dynamic-form/tests/app.lint-test", [], function () {
   QUnit.test('app/components/search-field.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app/components/search-field.js should pass ESLint\n\n');
+  });
+  QUnit.test('app/helpers/custom-format.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'app/helpers/custom-format.js should pass ESLint\n\n');
   });
   QUnit.test('app/helpers/date-field-format-date.js', function (assert) {
     assert.expect(1);
@@ -7516,6 +7552,25 @@ define("dummy/helpers/contains", ["exports", "ember-form-for/helpers/contains"],
     enumerable: true,
     get: function get() {
       return _contains.contains;
+    }
+  });
+});
+define("dummy/helpers/custom-format", ["exports", "ember-dynamic-form/helpers/custom-format"], function (_exports, _customFormat) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _customFormat.default;
+    }
+  });
+  Object.defineProperty(_exports, "customFormat", {
+    enumerable: true,
+    get: function get() {
+      return _customFormat.customFormat;
     }
   });
 });
@@ -11602,6 +11657,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"ember-dynamic-form","version":"2.11.0+3a679561"});
+  require("dummy/app")["default"].create({"name":"ember-dynamic-form","version":"2.11.0+000b0f43"});
 }
 //# sourceMappingURL=dummy.map
