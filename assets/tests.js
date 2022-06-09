@@ -62,7 +62,7 @@ define('dummy/tests/app.lint-test', [], function () {
 
   QUnit.test('components/fields/date-range-field/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/fields/date-range-field/component.js should pass ESLint\n\n1:8 - \'moment\' is defined but never used. (no-unused-vars)\n5:15 - \'setProperties\' is defined but never used. (no-unused-vars)\n15:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n19:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
+    assert.ok(false, 'components/fields/date-range-field/component.js should pass ESLint\n\n15:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n19:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)');
   });
 
   QUnit.test('components/fields/date-time-field/component.js', function (assert) {
@@ -122,7 +122,7 @@ define('dummy/tests/app.lint-test', [], function () {
 
   QUnit.test('components/sample-form/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/sample-form/component.js should pass ESLint\n\n60:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n62:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n83:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n109:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n123:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n130:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n134:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n160:8 - \'hljs\' is not defined. (no-undef)\n161:7 - \'hljs\' is not defined. (no-undef)\n197:7 - \'hljs\' is not defined. (no-undef)\n206:19 - \'model\' is defined but never used. (no-unused-vars)\n206:26 - \'property\' is defined but never used. (no-unused-vars)\n206:36 - \'value\' is defined but never used. (no-unused-vars)\n212:9 - Unexpected console statement. (no-console)\n214:9 - Unexpected console statement. (no-console)');
+    assert.ok(false, 'components/sample-form/component.js should pass ESLint\n\n34:8 - \'timeZoneMap\' is defined but never used. (no-unused-vars)\n75:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n77:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n98:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n124:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n138:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n145:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n149:3 - Only string, number, symbol, boolean, null, undefined, and function are allowed as default properties (ember/avoid-leaking-state-in-ember-objects)\n177:8 - \'hljs\' is not defined. (no-undef)\n178:7 - \'hljs\' is not defined. (no-undef)\n215:9 - \'hljs\' is not defined. (no-undef)');
   });
 
   QUnit.test('components/sample-form/fields/autocomplete-fields/multiple-with-create.js', function (assert) {
@@ -147,7 +147,7 @@ define('dummy/tests/app.lint-test', [], function () {
 
   QUnit.test('components/sample-form/fields/date-picker-fields/date-field.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/sample-form/fields/date-picker-fields/date-field.js should pass ESLint\n\n12:14 - \'moment\' is not defined. (no-undef)\n13:14 - \'moment\' is not defined. (no-undef)');
+    assert.ok(false, 'components/sample-form/fields/date-picker-fields/date-field.js should pass ESLint\n\n1:8 - \'moment\' is defined but never used. (no-unused-vars)');
   });
 
   QUnit.test('components/sample-form/fields/date-picker-fields/date-range-field.js', function (assert) {
@@ -157,7 +157,12 @@ define('dummy/tests/app.lint-test', [], function () {
 
   QUnit.test('components/sample-form/fields/date-picker-fields/date-time-field.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/sample-form/fields/date-picker-fields/date-time-field.js should pass ESLint\n\n12:17 - \'moment\' is not defined. (no-undef)\n13:15 - \'moment\' is not defined. (no-undef)');
+    assert.ok(true, 'components/sample-form/fields/date-picker-fields/date-time-field.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/sample-form/fields/date-picker-fields/time-picker-field.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/sample-form/fields/date-picker-fields/time-picker-field.js should pass ESLint\n\n');
   });
 
   QUnit.test('components/sample-form/fields/dependent-fields/checkbox-dependent-field.js', function (assert) {
@@ -308,6 +313,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('constants/select-fields/single.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'constants/select-fields/single.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('constants/timezone.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'constants/timezone.js should pass ESLint\n\n');
   });
 
   QUnit.test('models/date-field.js', function (assert) {

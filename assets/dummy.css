@@ -113,6 +113,14 @@ a {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif !important;
 }
 
+button[disabled] {
+  background: linear-gradient(180deg, #fff 0%, #f5f7f9 100%);
+  border-color: #CFD7DF;
+  opacity: 0.3;
+  cursor: default;
+  color: #92A2B1 !important;
+}
+
 /* form css  */
 
 .btn {
@@ -158,7 +166,7 @@ a {
 
 form {
    outline: none;
-   width: 500px;
+   width: 800px;
 }
  form .form-field {
    margin: 16px 0;
@@ -1154,6 +1162,11 @@ button:focus, button:active {
    content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='12px' height='9px' viewBox='0 0 12 9' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3ECheck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3Cpath d='M4.17095654,7.28764233 C3.74936256,6.89579049 3.08481084,6.91447629 2.68663874,7.32937825 C2.28846663,7.7442802 2.30745383,8.39828338 2.72904782,8.79013522 L5.87904631,11.7179111 C6.3006403,12.109763 6.96519201,12.0910772 7.36336412,11.6761752 L13.3133613,5.47617918 C13.7115334,5.06127722 13.6925462,4.40727405 13.2709522,4.0154222 C12.8493582,3.62357036 12.1848065,3.64225616 11.7866344,4.05715812 L6.55759159,9.50590771 L4.17095654,7.28764233 Z' id='path-1'%3E%3C/path%3E%3C/defs%3E%3Cg id='TD-with-Freddy-4-Email' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ticket-detail--open-copy-2' transform='translate(-1054.000000, -997.000000)'%3E%3Cg id='Group-92' transform='translate(880.000000, 828.000000)'%3E%3Cg id='Group-26'%3E%3Cg id='Group-7' transform='translate(0.000000, 54.000000)'%3E%3Cg id='Group-2' transform='translate(16.000000, 104.000000)'%3E%3Cg id='Icon/new/Check' transform='translate(156.000000, 8.000000)'%3E%3Cmask id='mask-2' fill='white'%3E%3Cuse xlink:href='%23path-1'%3E%3C/use%3E%3C/mask%3E%3Cuse id='save' fill='%23000000' fill-rule='nonzero' xlink:href='%23path-1'%3E%3C/use%3E%3Cg id='Color/Blue-(Hype)' mask='url(%23mask-2)' fill='%232C5CC5' fill-rule='evenodd'%3E%3Crect id='Color---Jade' x='0' y='0' width='15.8024691' height='15.8024691'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* time field */
+.time-field .time-picker-wrapper{
+  width: 112px;
+}
+
 /* date picker css */
 .date-time-field-icon, .date-field .date-picker-wrapper .ember-svg-trigger span, .date-range-field .date-picker-wrapper .ember-svg-trigger span, .date-time-split-field .date-picker-wrapper .ember-svg-trigger span, .time-picker-wrapper .time-picker-icon {
    position: relative;
@@ -1204,6 +1217,7 @@ button:focus, button:active {
  .date-field .date-field-wrapper .date-text-field, .date-range-field .date-field-wrapper .date-text-field, .date-time-split-field .date-field-wrapper .date-text-field, .date-field .date-range-field-wrapper .date-text-field, .date-range-field .date-range-field-wrapper .date-text-field, .date-time-split-field .date-range-field-wrapper .date-text-field, .date-field .date-time-split-field-wrapper .date-text-field, .date-range-field .date-time-split-field-wrapper .date-text-field, .date-time-split-field .date-time-split-field-wrapper .date-text-field, .date-field .date-field-wrapper .date-range-text-field, .date-range-field .date-field-wrapper .date-range-text-field, .date-time-split-field .date-field-wrapper .date-range-text-field, .date-field .date-range-field-wrapper .date-range-text-field, .date-range-field .date-range-field-wrapper .date-range-text-field, .date-time-split-field .date-range-field-wrapper .date-range-text-field, .date-field .date-time-split-field-wrapper .date-range-text-field, .date-range-field .date-time-split-field-wrapper .date-range-text-field, .date-time-split-field .date-time-split-field-wrapper .date-range-text-field {
    padding: 4px 40px 4px 8px;
    width: 100%;
+   border: solid 1px #dadfe3;
 }
  .date-field .date-field-wrapper .ember-basic-dropdown, .date-range-field .date-field-wrapper .ember-basic-dropdown, .date-time-split-field .date-field-wrapper .ember-basic-dropdown, .date-field .date-range-field-wrapper .ember-basic-dropdown, .date-range-field .date-range-field-wrapper .ember-basic-dropdown, .date-time-split-field .date-range-field-wrapper .ember-basic-dropdown, .date-field .date-time-split-field-wrapper .ember-basic-dropdown, .date-range-field .date-time-split-field-wrapper .ember-basic-dropdown, .date-time-split-field .date-time-split-field-wrapper .ember-basic-dropdown {
    position: unset;
@@ -1215,6 +1229,9 @@ button:focus, button:active {
  .date-field .date-text-field[disabled], .date-range-field .date-text-field[disabled], .date-time-split-field .date-text-field[disabled], .date-field .date-range-text-field[disabled], .date-range-field .date-range-text-field[disabled], .date-time-split-field .date-range-text-field[disabled] {
    cursor: not-allowed !important;
    background-color: #f7f9fa !important;
+}
+ .date-field .date-control .ember-basic-dropdown-content, .date-range-field .date-control .ember-basic-dropdown-content, .date-time-split-field .date-control .ember-basic-dropdown-content, .date-field .date-time-control .ember-basic-dropdown-content, .date-range-field .date-time-control .ember-basic-dropdown-content, .date-time-split-field .date-time-control .ember-basic-dropdown-content {
+   top: 36px;
 }
  .date-field .date-control, .date-range-field .date-control, .date-time-split-field .date-control, .date-field .date-range-control, .date-range-field .date-range-control, .date-time-split-field .date-range-control, .date-field .date-time-control, .date-range-field .date-time-control, .date-time-split-field .date-time-control {
    float: right;
@@ -1357,31 +1374,25 @@ button:focus, button:active {
  .date-field .ember-power-calendar-nav-buttons button:disabled svg, .date-range-field .ember-power-calendar-nav-buttons button:disabled svg, .date-time-split-field .ember-power-calendar-nav-buttons button:disabled svg, .date-field .ember-power-calendar-nav-buttons button[disabled] svg, .date-range-field .ember-power-calendar-nav-buttons button[disabled] svg, .date-time-split-field .ember-power-calendar-nav-buttons button[disabled] svg {
    fill: #92a2b1;
 }
- .date-field .date-range-picker-container-footer, .date-range-field .date-range-picker-container-footer, .date-time-split-field .date-range-picker-container-footer {
+ .date-field .date-picker-container-footer, .date-range-field .date-picker-container-footer, .date-time-split-field .date-picker-container-footer, .date-field .date-range-picker-container-footer, .date-range-field .date-range-picker-container-footer, .date-time-split-field .date-range-picker-container-footer {
    border-top: 1px solid #ebeff3;
    background: #f5f7f9;
    width: calc(100% + 48px);
    padding: 8px;
-   margin: 4px 0 0 -24px;
+   margin: 8px 0 0 -24px;
    display: flex;
    justify-content: flex-end;
 }
- .date-field .date-range-picker-container-footer .btn-reset, .date-range-field .date-range-picker-container-footer .btn-reset, .date-time-split-field .date-range-picker-container-footer .btn-reset {
+ .date-field .date-picker-container-footer .btn-reset, .date-range-field .date-picker-container-footer .btn-reset, .date-time-split-field .date-picker-container-footer .btn-reset, .date-field .date-range-picker-container-footer .btn-reset, .date-range-field .date-range-picker-container-footer .btn-reset, .date-time-split-field .date-range-picker-container-footer .btn-reset {
    margin-right: auto;
    font-weight: 600;
 }
- .date-field .date-range-picker-container-footer .btn-primary, .date-range-field .date-range-picker-container-footer .btn-primary, .date-time-split-field .date-range-picker-container-footer .btn-primary {
+ .date-field .date-picker-container-footer .btn-primary, .date-range-field .date-picker-container-footer .btn-primary, .date-time-split-field .date-picker-container-footer .btn-primary, .date-field .date-range-picker-container-footer .btn-primary, .date-range-field .date-range-picker-container-footer .btn-primary, .date-time-split-field .date-range-picker-container-footer .btn-primary {
    margin-right: 0;
 }
- .date-field .date-range-text-field, .date-range-field .date-range-text-field, .date-time-split-field .date-range-text-field {
-   cursor: pointer !important;
-   font-size: 12px;
-   font-family: inherit;
-   font-weight: 600;
-}
- .date-field .date-range-text-field.focus, .date-range-field .date-range-text-field.focus, .date-time-split-field .date-range-text-field.focus {
-   border-color: #2c5cc5;
-   box-shadow: 0 0 0 1px #2c5cc5;
+ .date-field .date-picker-container-footer, .date-range-field .date-picker-container-footer, .date-time-split-field .date-picker-container-footer {
+   width: calc(100% + 32px);
+   margin: 8px 0 0 -16px;
 }
  .date-field .date-range-field-wrapper .date-range-picker-container, .date-range-field .date-range-field-wrapper .date-range-picker-container, .date-time-split-field .date-range-field-wrapper .date-range-picker-container {
    display: flex;
@@ -1606,6 +1617,47 @@ button:focus, button:active {
 }
  .date-range-control .date-range-dropdown-content {
    padding: 16px 24px 0 !important;
+}
+ .date-range-control .ember-power-calendar-days {
+   min-height: 230px;
+}
+ .date-time-picker-wrapper-utc {
+   display: flex;
+   align-items: center;
+}
+ .date-time-picker-wrapper-utc .time-control .ember-power-select-selected-item {
+   margin-top: 4px;
+   font-size: 12px !important;
+   font-family: inherit;
+   font-weight: 600 !important;
+}
+ .date-time-picker-wrapper-utc .time-control .ember-power-select-placeholder {
+   font-size: 12px !important;
+   font-weight: 600 !important;
+   margin-top: 3px;
+}
+ .date-time-picker-wrapper-utc .date-control .ember-basic-dropdown-content, .date-picker-wrapper-utc .date-control .ember-basic-dropdown-content {
+   padding-bottom: 0;
+}
+ .date-time-picker-wrapper-utc .date-text-field, .date-picker-wrapper-utc .date-text-field, .date-range-field-wrapper .date-text-field, .date-time-picker-wrapper-utc .date-range-text-field, .date-picker-wrapper-utc .date-range-text-field, .date-range-field-wrapper .date-range-text-field {
+   cursor: pointer !important;
+   font-size: 12px;
+   font-family: inherit;
+   font-weight: 600;
+}
+ .date-time-picker-wrapper-utc .date-text-field.focus, .date-picker-wrapper-utc .date-text-field.focus, .date-range-field-wrapper .date-text-field.focus, .date-time-picker-wrapper-utc .date-range-text-field.focus, .date-picker-wrapper-utc .date-range-text-field.focus, .date-range-field-wrapper .date-range-text-field.focus {
+   box-shadow: 0 0 0 1px #2c5cc5;
+   border: 1px solid #2c5cc5 !important;
+}
+ .time-picker-wrapper-utc .ember-power-select-clear-btn {
+   display: none;
+}
+ .time-picker-wrapper-utc .btn-no-bg {
+   padding: 4px;
+   margin: 0 0 0 4px;
+}
+ .time-picker-wrapper-utc .btn-no-bg svg {
+   fill: #2c5cc5;
 }
  .module-view-query-form .date-range-field {
    margin-left: 16px !important;

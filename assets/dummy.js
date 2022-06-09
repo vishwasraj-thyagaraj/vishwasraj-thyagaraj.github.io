@@ -1777,7 +1777,7 @@ define("dummy/components/fields/date-field/component", ["exports", "moment", "du
       updateform: function updateform(e) {
         e.preventDefault();
         Ember.setProperties(this.model, {
-          dateOfBirth: '11-10-2021'
+          dateOfBirth: (0, _moment.default)().toISOString()
         });
         return false;
       }
@@ -1795,8 +1795,8 @@ define("dummy/components/fields/date-field/template", ["exports"], function (_ex
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "Xu+v2k0O",
-    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
+    "id": "491dXoRe",
+    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"class\",\"hide\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
     "meta": {
       "moduleName": "dummy/components/fields/date-field/template.hbs"
     }
@@ -1895,6 +1895,12 @@ define("dummy/components/fields/date-range-field/component", ["exports", "moment
       // dynamic update
       updateform: function updateform(e) {
         e.preventDefault();
+        Ember.setProperties(this.model, {
+          dateRange: {
+            from: (0, _moment.default)().subtract(1, 'months').toISOString(),
+            to: (0, _moment.default)().toISOString()
+          }
+        });
         return false;
       }
     }
@@ -1911,8 +1917,8 @@ define("dummy/components/fields/date-range-field/template", ["exports"], functio
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "29j+fEyA",
-    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Range Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
+    "id": "oe9pmCDq",
+    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Range Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"class\",\"hide\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
     "meta": {
       "moduleName": "dummy/components/fields/date-range-field/template.hbs"
     }
@@ -1937,7 +1943,7 @@ define("dummy/components/fields/date-time-field/component", ["exports", "moment"
     moment: Ember.inject.service(),
     // field helptexts
     fieldNameToHintComponentMap: {
-      dateOfBirth: 'field-tooltip'
+      dateTime: 'field-tooltip'
     },
     schema: {
       formOptions: {
@@ -1962,7 +1968,7 @@ define("dummy/components/fields/date-time-field/component", ["exports", "moment"
     },
     initModel: function initModel() {
       Ember.set(this, 'model', Ember.get(this, 'store').createRecord('date-field', {
-        dateOfBirth: (0, _moment.default)()
+        dateTime: (0, _moment.default)().toISOString()
       }));
     },
     actions: {
@@ -2006,7 +2012,7 @@ define("dummy/components/fields/date-time-field/component", ["exports", "moment"
       updateform: function updateform(e) {
         e.preventDefault();
         Ember.setProperties(this.model, {
-          dateOfBirth: '11-10-2021'
+          dateTime: (0, _moment.default)().toISOString()
         });
         return false;
       }
@@ -2024,8 +2030,8 @@ define("dummy/components/fields/date-time-field/template", ["exports"], function
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "//cEKQkQ",
-    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Time Split Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
+    "id": "qupS1DHk",
+    "block": "{\"symbols\":[\"f\"],\"statements\":[[6,\"main\"],[7],[0,\"\\n  \"],[6,\"h1\"],[9,\"id\",\"title\"],[7],[6,\"strong\"],[7],[0,\"Date Time Split Field\"],[8],[8],[0,\"\\n\"],[4,\"dynamic-form-for\",null,[[\"class\",\"model\",\"schema\",\"fieldNameToHintComponentMap\",\"save\"],[\"ember-form\",[20,[\"model\"]],[20,[\"schema\"]],[20,[\"fieldNameToHintComponentMap\"]],[25,\"action\",[[19,0,[]],\"save\",[20,[\"model\"]]],null]]],{\"statements\":[[0,\"      \"],[1,[19,1,[\"drawForm\"]],false],[0,\"\\n      \"],[1,[25,\"component\",[[19,1,[\"submit\"]],\"Save\"],null],false],[0,\"\\n      \"],[6,\"button\"],[9,\"class\",\"hide\"],[9,\"type\",\"button\"],[10,\"onclick\",[25,\"action\",[[19,0,[]],\"updateform\"],null],null],[7],[0,\"Dynamic Update\"],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[8]],\"hasEval\":false}",
     "meta": {
       "moduleName": "dummy/components/fields/date-time-field/template.hbs"
     }
@@ -3089,6 +3095,19 @@ define("dummy/components/form-controls/button", ["exports", "ember-form-for/comp
     }
   });
 });
+define("dummy/components/form-controls/date-field-utc/component", ["exports", "ember-dynamic-form/components/form-controls/date-field-utc/component"], function (_exports, _component) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _component.default;
+    }
+  });
+});
 define("dummy/components/form-controls/date-field/component", ["exports", "ember-dynamic-form/components/form-controls/date-field/component"], function (_exports, _component) {
   "use strict";
 
@@ -3103,6 +3122,19 @@ define("dummy/components/form-controls/date-field/component", ["exports", "ember
   });
 });
 define("dummy/components/form-controls/date-range-field/component", ["exports", "ember-dynamic-form/components/form-controls/date-range-field/component"], function (_exports, _component) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _component.default;
+    }
+  });
+});
+define("dummy/components/form-controls/date-time-split-utc/component", ["exports", "ember-dynamic-form/components/form-controls/date-time-split-utc/component"], function (_exports, _component) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -3167,6 +3199,19 @@ define("dummy/components/form-controls/multi-select-dropdown/component", ["expor
     }
   });
 });
+define("dummy/components/form-controls/one-way-text-exp/component", ["exports", "ember-dynamic-form/components/form-controls/one-way-text-exp/component"], function (_exports, _component) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _component.default;
+    }
+  });
+});
 define("dummy/components/form-controls/power-select/component", ["exports", "ember-dynamic-form/components/form-controls/power-select/component"], function (_exports, _component) {
   "use strict";
 
@@ -3207,6 +3252,19 @@ define("dummy/components/form-controls/submit", ["exports", "ember-form-for/comp
   });
 });
 define("dummy/components/form-controls/submit/component", ["exports", "ember-dynamic-form/components/form-controls/submit/component"], function (_exports, _component) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _component.default;
+    }
+  });
+});
+define("dummy/components/form-controls/time-picker-field-utc/component", ["exports", "ember-dynamic-form/components/form-controls/time-picker-field-utc/component"], function (_exports, _component) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -3918,6 +3976,19 @@ define("dummy/components/form-fields/time-field", ["exports", "ember-form-for/co
     enumerable: true,
     get: function get() {
       return _timeField.default;
+    }
+  });
+});
+define("dummy/components/form-fields/time-picker-field/component", ["exports", "ember-dynamic-form/components/form-fields/time-picker-field/component"], function (_exports, _component) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _component.default;
     }
   });
 });
@@ -4849,7 +4920,7 @@ define("dummy/components/render-component/template", ["exports"], function (_exp
 
   _exports.default = _default;
 });
-define("dummy/components/sample-form/component", ["exports", "moment", "dummy/constants/date-picker-fields/date-field", "dummy/constants/date-picker-fields/date-range-field", "dummy/constants/date-picker-fields/date-time-field", "dummy/constants/autocomplete-fields/single", "dummy/constants/autocomplete-fields/single-with-create", "dummy/constants/autocomplete-fields/multiple", "dummy/constants/autocomplete-fields/multiple-with-create", "dummy/constants/select-fields/single", "dummy/constants/select-fields/multiple", "dummy/constants/dependent-fields/nested-field", "dummy/constants/dependent-fields/radio-dependent-field", "dummy/constants/dependent-fields/checkbox-dependent-field", "dummy/constants/dependent-fields/dropdown-dependent-field", "dummy/constants/normal-fields/input-field", "dummy/constants/normal-fields/textarea-field", "dummy/constants/normal-fields/checkbox-field", "dummy/constants/normal-fields/checkbox-group-field", "dummy/constants/normal-fields/radio-field"], function (_exports, _moment, _dateField, _dateRangeField, _dateTimeField, _single, _singleWithCreate, _multiple, _multipleWithCreate, _single2, _multiple2, _nestedField, _radioDependentField, _checkboxDependentField, _dropdownDependentField, _inputField, _textareaField, _checkboxField, _checkboxGroupField, _radioField) {
+define("dummy/components/sample-form/component", ["exports", "moment", "dummy/components/sample-form/fields/date-picker-fields/date-field", "dummy/components/sample-form/fields/date-picker-fields/time-picker-field", "dummy/components/sample-form/fields/date-picker-fields/date-range-field", "dummy/components/sample-form/fields/date-picker-fields/date-time-field", "dummy/constants/autocomplete-fields/single", "dummy/constants/autocomplete-fields/single-with-create", "dummy/constants/autocomplete-fields/multiple", "dummy/constants/autocomplete-fields/multiple-with-create", "dummy/constants/select-fields/single", "dummy/constants/select-fields/multiple", "dummy/constants/dependent-fields/nested-field", "dummy/constants/dependent-fields/radio-dependent-field", "dummy/constants/dependent-fields/checkbox-dependent-field", "dummy/constants/dependent-fields/dropdown-dependent-field", "dummy/constants/normal-fields/input-field", "dummy/constants/normal-fields/textarea-field", "dummy/constants/normal-fields/checkbox-field", "dummy/constants/normal-fields/checkbox-group-field", "dummy/constants/normal-fields/radio-field", "dummy/constants/timezone"], function (_exports, _moment, _dateField, _timePickerField, _dateRangeField, _dateTimeField, _single, _singleWithCreate, _multiple, _multipleWithCreate, _single2, _multiple2, _nestedField, _radioDependentField, _checkboxDependentField, _dropdownDependentField, _inputField, _textareaField, _checkboxField, _checkboxGroupField, _radioField, _timezone) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -4861,11 +4932,12 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
 
   function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-  var dateFields = [_dateField.default, _dateTimeField.default, _dateRangeField.default];
+  var dateFields = [_dateField.default, _dateTimeField.default, _dateRangeField.default, _timePickerField.default];
   var autocompletFields = [_single.default, _singleWithCreate.default, _multiple.default, _multipleWithCreate.default];
   var selectFields = [_single2.default, _multiple2.default];
   var dependentFields = [_nestedField.default, _radioDependentField.default, _checkboxDependentField.default, _dropdownDependentField.default];
-  var normalFields = [_inputField.default, _textareaField.default, _checkboxField.default, _checkboxGroupField.default, _radioField.default];
+  var normalFields = [// inputField, 
+  _textareaField.default, _checkboxField.default, _checkboxGroupField.default, _radioField.default];
 
   function createNewOptionCallback(callback) {
     var value = Ember.guidFor({});
@@ -4942,12 +5014,14 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
       this._super.apply(this, arguments); // all fields
 
 
-      Ember.set(this, 'schema.fields', this.allFields);
+      Ember.set(this, 'schema.fields', this.allFields); // timeZoneMap['Eastern Time (US & Canada)']
+
       this.initFormWithTimeZone();
       this.initFormWithLocale();
       this.initModel();
       this.overrideFields();
       window.moment = _moment.default;
+      window.userMoment = this.get('moment');
       Ember.run.next(function () {
         if (getQueryVariable('highlight') === 'true') {
           _this.renderSnippets(_this.allFields);
@@ -4982,23 +5056,33 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
     renderSnippets: function renderSnippets(fields) {
       fields.forEach(function (field) {
         var parent = document.querySelector("[formserv-field-name=\"".concat(field.name, "\"]"));
-        var hasChild = parent.querySelector('.code-snippet');
-        if (hasChild) hasChild.remove();
-        var pre = document.createElement('pre');
-        pre.classList.add('code-snippet');
-        var code = document.createElement('code');
-        code.innerHTML = JSON.stringify(field, null, '  ');
-        code.classList.add('language-js');
-        pre.appendChild(code);
-        parent.appendChild(pre);
-        hljs.highlightAll();
+
+        if (parent) {
+          var hasChild = parent.querySelector('.code-snippet');
+          if (hasChild) hasChild.remove();
+          var pre = document.createElement('pre');
+          pre.classList.add('code-snippet');
+          var code = document.createElement('code');
+          code.innerHTML = JSON.stringify(field, null, '  ');
+          code.classList.add('language-js');
+          pre.appendChild(code);
+          parent.appendChild(pre);
+          hljs.highlightAll();
+        }
       });
     },
     actions: {
       update: function update(model, property, value) {
         Ember.set(model, property, value);
       },
-      onFieldChange: function onFieldChange(model, property, value) {},
+      onFieldChange: function onFieldChange(model, property, value) {
+        /* eslint-disable no-console */
+        console.log({
+          model: model,
+          property: property,
+          value: value
+        });
+      },
       save: function save(model) {
         return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
           var _yield$model$validate, validations;
@@ -5014,13 +5098,22 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
                   _yield$model$validate = _context.sent;
                   validations = _yield$model$validate.validations;
 
-                  if (validations.get('isValid')) {
-                    console.log(model.toJSON());
-                  } else {
-                    console.log(validations.get('errors'));
+                  if (!validations.get('isValid')) {
+                    _context.next = 8;
+                    break;
                   }
 
-                case 5:
+                  /* eslint-disable no-console */
+                  console.log(model.toJSON());
+                  _context.next = 10;
+                  break;
+
+                case 8:
+                  /* eslint-disable no-console */
+                  console.log(validations.get('errors'));
+                  throw 'Validation Error';
+
+                case 10:
                 case "end":
                   return _context.stop();
               }
@@ -5031,7 +5124,10 @@ define("dummy/components/sample-form/component", ["exports", "moment", "dummy/co
       // dynamic update
       updateform: function updateform(e) {
         e.preventDefault();
-        var dynamicModelUpdate = {};
+        var dynamicModelUpdate = {
+          dateOfBirth: (0, _moment.default)().add(2, 'days').toISOString(),
+          dateTime: (0, _moment.default)().add(2, 'days').toISOString()
+        };
         Ember.setProperties(this.model, dynamicModelUpdate);
         return false;
       },
@@ -5198,7 +5294,7 @@ define("dummy/components/sample-form/fields/autocomplete-fields/single", ["expor
   };
   _exports.default = _default;
 });
-define("dummy/components/sample-form/fields/date-picker-fields/date-field", ["exports"], function (_exports) {
+define("dummy/components/sample-form/fields/date-picker-fields/date-field", ["exports", "moment"], function (_exports, _moment) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -5217,12 +5313,10 @@ define("dummy/components/sample-form/fields/date-picker-fields/date-field", ["ex
     // if no placeholder is givem dateFormat is taken as placeholder
     fieldOptions: {
       allowClear: true,
-      minDate: moment('01-06-2021', 'DD-MM-YYYY'),
-      maxDate: moment('31-07-2022', 'DD-MM-YYYY'),
-      // startMonth: moment('01-07-2015', 'DD-MM-YYYY').month(),
-      // endMonth: moment('31-07-2016', 'DD-MM-YYYY').month(),
-      // startYear: 2015,
-      // endYear: 2016,
+      // minDate and maxDate should be given in localmoment
+      // minDate: moment(this.get('moment').moment().format('YYYY-MM-DD'), 'YYYY-MM-DD')
+      // minDate: moment(),
+      // maxDate: moment('2030-12-31', 'YYYY-MM-DD'),
       dateFormat: 'DD-MM-YYYY'
     }
   };
@@ -5295,7 +5389,7 @@ define("dummy/components/sample-form/fields/date-picker-fields/date-range-field"
   };
   _exports.default = _default;
 });
-define("dummy/components/sample-form/fields/date-picker-fields/date-time-field", ["exports"], function (_exports) {
+define("dummy/components/sample-form/fields/date-picker-fields/date-time-field", ["exports", "moment"], function (_exports, _moment) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -5311,19 +5405,40 @@ define("dummy/components/sample-form/fields/date-picker-fields/date-time-field",
     fields: [],
     fieldOptions: {
       allowClear: true,
-      // minDate: moment('01 Jun, 2021'),
-      // maxDate: moment('31 Jul, 2022'),
-      startMonth: moment('01-07-2015', 'DD-MM-YYYY').month(),
-      endMonth: moment('31-07-2016', 'DD-MM-YYYY').month(),
-      startYear: 2015,
-      endYear: 2016,
+      // minDate and maxDate should be given in localmoment
+      // minDate: moment(this.get('moment').moment().format('YYYY-MM-DD'), 'YYYY-MM-DD')
+      minDate: (0, _moment.default)(),
+      maxDate: (0, _moment.default)('2030-12-31', 'YYYY-MM-DD'),
+      // taken from current account date format
       dateFormat: 'DD-MM-YYYY',
+      twentyFourHrFormat: false,
       placeholder: {
         date: 'Select date',
         // if no placeholder is givem dateFormat is taken as placeholder
         time: 'Select time' // if no placeholder is give HH:MM is taken as placeholder
 
       }
+    }
+  };
+  _exports.default = _default;
+});
+define("dummy/components/sample-form/fields/date-picker-fields/time-picker-field", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  var _default = {
+    name: 'time',
+    label: 'Time picker',
+    editable: true,
+    required: true,
+    inputType: 'time-picker-field',
+    fields: [],
+    fieldOptions: {
+      timeOnly: true,
+      allowClear: true
     }
   };
   _exports.default = _default;
@@ -6639,6 +6754,166 @@ define("dummy/constants/select-fields/single", ["exports"], function (_exports) 
   };
   _exports.default = _default;
 });
+define("dummy/constants/timezone", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+  var _default = {
+    'American Samoa': 'Pacific/Pago_Pago',
+    'Samoa': 'Pacific/Apia',
+    'International Date Line West': 'Pacific/Midway',
+    'Midway Island': 'Pacific/Midway',
+    'Hawaii': 'Pacific/Honolulu',
+    'Alaska': 'America/Juneau',
+    'Pacific Time (US & Canada)': 'America/Los_Angeles',
+    'Tijuana': 'America/Tijuana',
+    'Arizona': 'America/Phoenix',
+    'Chihuahua': 'America/Chihuahua',
+    'Mazatlan': 'America/Mazatlan',
+    'Mountain Time (US & Canada)': 'America/Denver',
+    'Central America': 'America/Guatemala',
+    'Central Time (US & Canada)': 'America/Chicago',
+    'Guadalajara': 'America/Mexico_City',
+    'Mexico City': 'America/Mexico_City',
+    'Monterrey': 'America/Monterrey',
+    'Saskatchewan': 'America/Regina',
+    'Bogota': 'America/Bogota',
+    'Eastern Time (US & Canada)': 'America/New_York',
+    'Indiana (East)': 'America/Indiana/Indianapolis',
+    'Lima': 'America/Lima',
+    'Quito': 'America/Lima',
+    'Atlantic Time (Canada)': 'America/Halifax',
+    'Caracas': 'America/Caracas',
+    'Georgetown': 'America/Guyana',
+    'La Paz': 'America/La_Paz',
+    'Santiago': 'America/Santiago',
+    'Newfoundland': 'America/St_Johns',
+    'Brasilia': 'America/Sao_Paulo',
+    'Buenos Aires': 'America/Argentina/Buenos_Aires',
+    'Greenland': 'America/Godthab',
+    'Montevideo': 'America/Montevideo',
+    'Mid-Atlantic': 'Atlantic/South_Georgia',
+    'Azores': 'Atlantic/Azores',
+    'Cape Verde Is.': 'Atlantic/Cape_Verde',
+    'Casablanca': 'Africa/Casablanca',
+    'Dublin': 'Europe/Dublin',
+    'Edinburgh': 'Europe/London',
+    'Lisbon': 'Europe/Lisbon',
+    'London': 'Europe/London',
+    'Monrovia': 'Africa/Monrovia',
+    'UTC': 'Etc/UTC',
+    'Amsterdam': 'Europe/Amsterdam',
+    'Belgrade': 'Europe/Belgrade',
+    'Berlin': 'Europe/Berlin',
+    'Bern': 'Europe/Berlin',
+    'Bratislava': 'Europe/Bratislava',
+    'Brussels': 'Europe/Brussels',
+    'Budapest': 'Europe/Budapest',
+    'Copenhagen': 'Europe/Copenhagen',
+    'Ljubljana': 'Europe/Ljubljana',
+    'Madrid': 'Europe/Madrid',
+    'Paris': 'Europe/Paris',
+    'Prague': 'Europe/Prague',
+    'Rome': 'Europe/Rome',
+    'Sarajevo': 'Europe/Sarajevo',
+    'Skopje': 'Europe/Skopje',
+    'Stockholm': 'Europe/Stockholm',
+    'Vienna': 'Europe/Vienna',
+    'Warsaw': 'Europe/Warsaw',
+    'West Central Africa': 'Africa/Algiers',
+    'Zagreb': 'Europe/Zagreb',
+    'Athens': 'Europe/Athens',
+    'Bucharest': 'Europe/Bucharest',
+    'Cairo': 'Africa/Cairo',
+    'Harare': 'Africa/Harare',
+    'Helsinki': 'Europe/Helsinki',
+    'Jerusalem': 'Asia/Jerusalem',
+    'Kaliningrad': 'Europe/Kaliningrad',
+    'Kyiv': 'Europe/Kiev',
+    'Pretoria': 'Africa/Johannesburg',
+    'Riga': 'Europe/Riga',
+    'Sofia': 'Europe/Sofia',
+    'Tallinn': 'Europe/Tallinn',
+    'Vilnius': 'Europe/Vilnius',
+    'Baghdad': 'Asia/Baghdad',
+    'Istanbul': 'Europe/Istanbul',
+    'Kuwait': 'Asia/Kuwait',
+    'Minsk': 'Europe/Minsk',
+    'Moscow': 'Europe/Moscow',
+    'Nairobi': 'Africa/Nairobi',
+    'Riyadh': 'Asia/Riyadh',
+    'St. Petersburg': 'Europe/Moscow',
+    'Tehran': 'Asia/Tehran',
+    'Abu Dhabi': 'Asia/Muscat',
+    'Baku': 'Asia/Baku',
+    'Muscat': 'Asia/Muscat',
+    'Samara': 'Europe/Samara',
+    'Tbilisi': 'Asia/Tbilisi',
+    'Volgograd': 'Europe/Volgograd',
+    'Yerevan': 'Asia/Yerevan',
+    'Kabul': 'Asia/Kabul',
+    'Ekaterinburg': 'Asia/Yekaterinburg',
+    'Islamabad': 'Asia/Karachi',
+    'Karachi': 'Asia/Karachi',
+    'Tashkent': 'Asia/Tashkent',
+    'Chennai': 'Asia/Kolkata',
+    'Kolkata': 'Asia/Kolkata',
+    'Mumbai': 'Asia/Kolkata',
+    'New Delhi': 'Asia/Kolkata',
+    'Sri Jayawardenepura': 'Asia/Colombo',
+    'Kathmandu': 'Asia/Kathmandu',
+    'Almaty': 'Asia/Almaty',
+    'Astana': 'Asia/Dhaka',
+    'Dhaka': 'Asia/Dhaka',
+    'Urumqi': 'Asia/Urumqi',
+    'Rangoon': 'Asia/Rangoon',
+    'Bangkok': 'Asia/Bangkok',
+    'Hanoi': 'Asia/Bangkok',
+    'Jakarta': 'Asia/Jakarta',
+    'Krasnoyarsk': 'Asia/Krasnoyarsk',
+    'Novosibirsk': 'Asia/Novosibirsk',
+    'Beijing': 'Asia/Shanghai',
+    'Chongqing': 'Asia/Chongqing',
+    'Hong Kong': 'Asia/Hong_Kong',
+    'Irkutsk': 'Asia/Irkutsk',
+    'Kuala Lumpur': 'Asia/Kuala_Lumpur',
+    'Perth': 'Australia/Perth',
+    'Singapore': 'Asia/Singapore',
+    'Taipei': 'Asia/Taipei',
+    'Ulaan Bataar': 'Asia/Ulaanbaatar',
+    'Osaka': 'Asia/Tokyo',
+    'Sapporo': 'Asia/Tokyo',
+    'Seoul': 'Asia/Seoul',
+    'Tokyo': 'Asia/Tokyo',
+    'Yakutsk': 'Asia/Yakutsk',
+    'Adelaide': 'Australia/Adelaide',
+    'Darwin': 'Australia/Darwin',
+    'Brisbane': 'Australia/Brisbane',
+    'Canberra': 'Australia/Melbourne',
+    'Guam': 'Pacific/Guam',
+    'Hobart': 'Australia/Hobart',
+    'Melbourne': 'Australia/Melbourne',
+    'Port Moresby': 'Pacific/Port_Moresby',
+    'Sydney': 'Australia/Sydney',
+    'Vladivostok': 'Asia/Vladivostok',
+    'Magadan': 'Asia/Magadan',
+    'New Caledonia': 'Pacific/Noumea',
+    'Solomon Is.': 'Pacific/Guadalcanal',
+    'Srednekolymsk': 'Asia/Srednekolymsk',
+    'Auckland': 'Pacific/Auckland',
+    'Fiji': 'Pacific/Fiji',
+    'Kamchatka': 'Asia/Kamchatka',
+    'Marshall Is.': 'Pacific/Majuro',
+    'Wellington': 'Pacific/Auckland',
+    'Chatham Is.': 'Pacific/Chatham',
+    "Nuku'alofa": 'Pacific/Tongatapu',
+    'Tokelau Is.': 'Pacific/Fakaofo'
+  };
+  _exports.default = _default;
+});
 define("dummy/controllers/docs/api/class", ["exports", "ember-cli-addon-docs/controllers/docs/api/class"], function (_exports, _class) {
   "use strict";
 
@@ -6678,19 +6953,27 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
   });
   QUnit.test('addon/components/form-controls/auto-complete/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'addon/components/form-controls/auto-complete/component.js should pass ESLint\n\n');
+    assert.ok(false, 'addon/components/form-controls/auto-complete/component.js should pass ESLint\n\n291:66 - Parsing error: Unexpected token . (null)');
+  });
+  QUnit.test('addon/components/form-controls/date-field-utc/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'addon/components/form-controls/date-field-utc/component.js should pass ESLint\n\n');
   });
   QUnit.test('addon/components/form-controls/date-field/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'addon/components/form-controls/date-field/component.js should pass ESLint\n\n164:11 - Don\'t introduce side-effects in computed properties (ember/no-side-effects)');
+    assert.ok(false, 'addon/components/form-controls/date-field/component.js should pass ESLint\n\n168:11 - Don\'t introduce side-effects in computed properties (ember/no-side-effects)');
   });
   QUnit.test('addon/components/form-controls/date-range-field/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'addon/components/form-controls/date-range-field/component.js should pass ESLint\n\n');
   });
+  QUnit.test('addon/components/form-controls/date-time-split-utc/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'addon/components/form-controls/date-time-split-utc/component.js should pass ESLint\n\n');
+  });
   QUnit.test('addon/components/form-controls/date-time-split/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'addon/components/form-controls/date-time-split/component.js should pass ESLint\n\n6:10 - \'isNone\' is defined but never used. (no-unused-vars)\n6:18 - \'isPresent\' is defined but never used. (no-unused-vars)\n6:29 - \'isEmpty\' is defined but never used. (no-unused-vars)\n43:24 - \'moment\' is not defined. (no-undef)');
+    assert.ok(true, 'addon/components/form-controls/date-time-split/component.js should pass ESLint\n\n');
   });
   QUnit.test('addon/components/form-controls/dependent-selects/power-select/component.js', function (assert) {
     assert.expect(1);
@@ -6702,7 +6985,11 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
   });
   QUnit.test('addon/components/form-controls/multi-select-dropdown/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'addon/components/form-controls/multi-select-dropdown/component.js should pass ESLint\n\n22:21 - Use import { A } from \'@ember/array\'; instead of using Ember.A (ember/new-module-imports)\n22:21 - \'Ember\' is not defined. (no-undef)');
+    assert.ok(false, 'addon/components/form-controls/multi-select-dropdown/component.js should pass ESLint\n\n24:21 - Use import { A } from \'@ember/array\'; instead of using Ember.A (ember/new-module-imports)\n24:21 - \'Ember\' is not defined. (no-undef)');
+  });
+  QUnit.test('addon/components/form-controls/one-way-text-exp/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'addon/components/form-controls/one-way-text-exp/component.js should pass ESLint\n\n');
   });
   QUnit.test('addon/components/form-controls/power-select/component.js', function (assert) {
     assert.expect(1);
@@ -6712,9 +6999,13 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'addon/components/form-controls/submit/component.js should pass ESLint\n\n');
   });
+  QUnit.test('addon/components/form-controls/time-picker-field-utc/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'addon/components/form-controls/time-picker-field-utc/component.js should pass ESLint\n\n79:21 - \'moment\' is not defined. (no-undef)');
+  });
   QUnit.test('addon/components/form-controls/time-picker-field/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'addon/components/form-controls/time-picker-field/component.js should pass ESLint\n\n28:12 - Use brace expansion (ember/use-brace-expansion)');
+    assert.ok(true, 'addon/components/form-controls/time-picker-field/component.js should pass ESLint\n\n');
   });
   QUnit.test('addon/components/form-errors/component.js', function (assert) {
     assert.expect(1);
@@ -6722,7 +7013,7 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
   });
   QUnit.test('addon/components/form-field/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'addon/components/form-field/component.js should pass ESLint\n\n');
+    assert.ok(false, 'addon/components/form-field/component.js should pass ESLint\n\n38:12 - Use brace expansion (ember/use-brace-expansion)\n43:15 - Use brace expansion (ember/use-brace-expansion)');
   });
   QUnit.test('addon/components/form-fields/auto-complete/component.js', function (assert) {
     assert.expect(1);
@@ -6824,6 +7115,10 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'addon/components/form-fields/textarea-field/component.js should pass ESLint\n\n');
   });
+  QUnit.test('addon/components/form-fields/time-picker-field/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'addon/components/form-fields/time-picker-field/component.js should pass ESLint\n\n');
+  });
   QUnit.test('addon/components/form-fields/url-field/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'addon/components/form-fields/url-field/component.js should pass ESLint\n\n');
@@ -6842,7 +7137,7 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
   });
   QUnit.test('addon/components/power-calendar/days/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'addon/components/power-calendar/days/component.js should pass ESLint\n\n6:20 - \'set\' is defined but never used. (no-unused-vars)\n90:30 - \'weekdayFormat\' is assigned a value but never used. (no-unused-vars)\n310:9 - Use closure actions, unless you need bubbling (ember/closure-actions)');
+    assert.ok(false, 'addon/components/power-calendar/days/component.js should pass ESLint\n\n6:20 - \'set\' is defined but never used. (no-unused-vars)\n90:30 - \'weekdayFormat\' is assigned a value but never used. (no-unused-vars)\n311:9 - Use closure actions, unless you need bubbling (ember/closure-actions)');
   });
   QUnit.test('addon/components/power-select-multiple-with-create/component.js', function (assert) {
     assert.expect(1);
@@ -6911,6 +7206,10 @@ define("dummy/ember-dynamic-form/tests/addon.lint-test", [], function () {
   QUnit.test('addon/mixins/form-control.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'addon/mixins/form-control.js should pass ESLint\n\n');
+  });
+  QUnit.test('addon/mixins/power-select-translation.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'addon/mixins/power-select-translation.js should pass ESLint\n\n');
   });
   QUnit.test('addon/models/choice.js', function (assert) {
     assert.expect(1);
@@ -6997,6 +7296,10 @@ define("dummy/ember-dynamic-form/tests/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'app/components/form-controls/auto-complete/component.js should pass ESLint\n\n');
   });
+  QUnit.test('app/components/form-controls/date-field-utc/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'app/components/form-controls/date-field-utc/component.js should pass ESLint\n\n');
+  });
   QUnit.test('app/components/form-controls/date-field/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app/components/form-controls/date-field/component.js should pass ESLint\n\n');
@@ -7004,6 +7307,10 @@ define("dummy/ember-dynamic-form/tests/app.lint-test", [], function () {
   QUnit.test('app/components/form-controls/date-range-field/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app/components/form-controls/date-range-field/component.js should pass ESLint\n\n');
+  });
+  QUnit.test('app/components/form-controls/date-time-split-utc/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'app/components/form-controls/date-time-split-utc/component.js should pass ESLint\n\n');
   });
   QUnit.test('app/components/form-controls/date-time-split/component.js', function (assert) {
     assert.expect(1);
@@ -7021,6 +7328,10 @@ define("dummy/ember-dynamic-form/tests/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'app/components/form-controls/multi-select-dropdown/component.js should pass ESLint\n\n');
   });
+  QUnit.test('app/components/form-controls/one-way-text-exp/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'app/components/form-controls/one-way-text-exp/component.js should pass ESLint\n\n');
+  });
   QUnit.test('app/components/form-controls/power-select/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app/components/form-controls/power-select/component.js should pass ESLint\n\n');
@@ -7028,6 +7339,10 @@ define("dummy/ember-dynamic-form/tests/app.lint-test", [], function () {
   QUnit.test('app/components/form-controls/submit/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app/components/form-controls/submit/component.js should pass ESLint\n\n');
+  });
+  QUnit.test('app/components/form-controls/time-picker-field-utc/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'app/components/form-controls/time-picker-field-utc/component.js should pass ESLint\n\n');
   });
   QUnit.test('app/components/form-controls/time-picker-field/component.js', function (assert) {
     assert.expect(1);
@@ -7144,6 +7459,10 @@ define("dummy/ember-dynamic-form/tests/app.lint-test", [], function () {
   QUnit.test('app/components/form-fields/textarea-field/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app/components/form-fields/textarea-field/component.js should pass ESLint\n\n');
+  });
+  QUnit.test('app/components/form-fields/time-picker-field/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'app/components/form-fields/time-picker-field/component.js should pass ESLint\n\n');
   });
   QUnit.test('app/components/form-fields/url-field/component.js', function (assert) {
     assert.expect(1);
@@ -7813,6 +8132,71 @@ define("dummy/helpers/form-for/merge-custom-form-field", ["exports", "ember-form
     enumerable: true,
     get: function get() {
       return _mergeCustomFormField.formForMergeCustomFormField;
+    }
+  });
+});
+define("dummy/helpers/format-date", ["exports", "ember-intl/helpers/format-date"], function (_exports, _formatDate) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _formatDate.default;
+    }
+  });
+});
+define("dummy/helpers/format-message", ["exports", "ember-intl/helpers/format-message"], function (_exports, _formatMessage) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _formatMessage.default;
+    }
+  });
+});
+define("dummy/helpers/format-number", ["exports", "ember-intl/helpers/format-number"], function (_exports, _formatNumber) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _formatNumber.default;
+    }
+  });
+});
+define("dummy/helpers/format-relative", ["exports", "ember-intl/helpers/format-relative"], function (_exports, _formatRelative) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _formatRelative.default;
+    }
+  });
+});
+define("dummy/helpers/format-time", ["exports", "ember-intl/helpers/format-time"], function (_exports, _formatTime) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _formatTime.default;
     }
   });
 });
@@ -9083,6 +9467,19 @@ define("dummy/helpers/svg-jar", ["exports", "ember-svg-jar/utils/make-helper", "
 
   _exports.default = _default;
 });
+define("dummy/helpers/t", ["exports", "ember-intl/helpers/t"], function (_exports, _t) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _t.default;
+    }
+  });
+});
 define("dummy/helpers/take", ["exports", "ember-composable-helpers/helpers/take"], function (_exports, _take) {
   "use strict";
 
@@ -10145,6 +10542,7 @@ define("dummy/models/user", ["exports", "ember-data", "ember-cp-validations"], f
     degree: (0, _emberCpValidations.validator)('presence', true),
     dateOfBirth: (0, _emberCpValidations.validator)('presence', true),
     dateTime: (0, _emberCpValidations.validator)('presence', true),
+    dateRange: (0, _emberCpValidations.validator)('presence', true),
     placeOfBirth: (0, _emberCpValidations.validator)('presence', true),
     languages: (0, _emberCpValidations.validator)('presence', true),
     idProof: (0, _emberCpValidations.validator)('presence', true),
@@ -10162,8 +10560,7 @@ define("dummy/models/user", ["exports", "ember-data", "ember-cp-validations"], f
     fsPlan: (0, _emberCpValidations.validator)('presence', true),
     fdPlan: (0, _emberCpValidations.validator)('presence', true),
     framework: (0, _emberCpValidations.validator)('presence', true),
-    feFramework: (0, _emberCpValidations.validator)('presence', true),
-    dateRange: (0, _emberCpValidations.validator)('presence', true)
+    feFramework: (0, _emberCpValidations.validator)('presence', true)
   });
 
   var _default = Model.extend(Validations, {
@@ -10173,6 +10570,7 @@ define("dummy/models/user", ["exports", "ember-data", "ember-cp-validations"], f
     degree: attr('string'),
     dateOfBirth: attr('string'),
     dateTime: attr('string'),
+    dateRange: attr({}),
     placeOfBirth: attr('string'),
     languages: attr('string'),
     idProof: attr('string'),
@@ -10190,8 +10588,7 @@ define("dummy/models/user", ["exports", "ember-data", "ember-cp-validations"], f
     fsPlan: attr('string'),
     fdPlan: attr('string'),
     framework: attr('string'),
-    feFramework: attr('string'),
-    dateRange: attr({})
+    feFramework: attr('string')
   });
 
   _exports.default = _default;
@@ -10505,6 +10902,19 @@ define("dummy/services/ember-form-for/config", ["exports", "ember-dynamic-form/s
     enumerable: true,
     get: function get() {
       return _config.default;
+    }
+  });
+});
+define("dummy/services/intl", ["exports", "ember-intl/services/intl"], function (_exports, _intl) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _intl.default;
     }
   });
 });
@@ -11388,6 +11798,19 @@ define("dummy/utils/get-cmd-key", ["exports", "ember-keyboard/utils/get-cmd-key"
     }
   });
 });
+define("dummy/utils/intl/missing-message", ["exports", "ember-intl/-private/utils/missing-message"], function (_exports, _missingMessage) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(_exports, "default", {
+    enumerable: true,
+    get: function get() {
+      return _missingMessage.default;
+    }
+  });
+});
 define("dummy/utils/listener-name", ["exports", "ember-keyboard/utils/listener-name"], function (_exports, _listenerName) {
   "use strict";
 
@@ -11657,6 +12080,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"ember-dynamic-form","version":"2.11.0+000b0f43"});
+  require("dummy/app")["default"].create({"name":"ember-dynamic-form","version":"2.11.0+9fe5e2be"});
 }
 //# sourceMappingURL=dummy.map
